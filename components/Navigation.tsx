@@ -12,6 +12,7 @@ export function Navigation() {
     { label: 'Riesgos', href: '/privacy-risks' },
     { label: 'Cumplimiento', href: '/compliance' },
     { label: 'Escenarios', href: '/scenarios' },
+    { label: 'Prototipo', href: '/prototype' },
     { label: 'Recursos', href: '/resources' },
     { label: 'Acerca de', href: '/about' },
   ]
