@@ -8,12 +8,12 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { label: 'Framework', href: '/framework' },
-    { label: 'Privacy Risks', href: '/privacy-risks' },
-    { label: 'Compliance', href: '/compliance' },
-    { label: 'Scenarios', href: '/scenarios' },
-    { label: 'Resources', href: '/resources' },
-    { label: 'About', href: '/about' },
+    { label: 'Marco', href: '/framework' },
+    { label: 'Riesgos', href: '/privacy-risks' },
+    { label: 'Cumplimiento', href: '/compliance' },
+    { label: 'Escenarios', href: '/scenarios' },
+    { label: 'Recursos', href: '/resources' },
+    { label: 'Acerca de', href: '/about' },
   ]
 
   return (
@@ -23,7 +23,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <div className="text-xl font-bold text-primary">
-              LLM Privacy<span className="text-sm ml-1 font-normal">Framework</span>
+              Marco LLM<span className="text-sm ml-1 font-normal">Privacidad</span>
             </div>
           </Link>
 

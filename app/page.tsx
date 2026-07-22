@@ -6,12 +6,12 @@ export default function Page() {
   return (
     <>
       <HeroSection
-        title="LLM Privacy Framework for Colombian Higher Education"
-        subtitle="Navigate privacy risks and ensure compliance when implementing Large Language Models"
-        description="A comprehensive educational resource for researchers, academics, and IT professionals seeking to understand privacy risks, data protection requirements, and best practices for safe LLM adoption."
-        ctaLabel="Explore the Framework"
+        title="Marco de Privacidad LLM para Educación Superior Colombiana"
+        subtitle="Navega por los riesgos de privacidad y asegura el cumplimiento al implementar Modelos de Lenguaje Grande"
+        description="Un recurso educativo integral para investigadores, académicos y profesionales de TI que buscan entender los riesgos de privacidad, requisitos de protección de datos y mejores prácticas para una adopción segura de LLM."
+        ctaLabel="Explorar el Marco"
         ctaHref="/framework"
-        secondaryCtaLabel="View Privacy Risks"
+        secondaryCtaLabel="Ver Riesgos de Privacidad"
         secondaryCtaHref="/privacy-risks"
       />
 
@@ -20,26 +20,26 @@ export default function Page() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           <QuickNavCard
             icon={<Shield className="w-6 h-6" />}
-            title="Framework Overview"
-            description="Learn the four pillars of the privacy framework"
+            title="Descripción General del Marco"
+            description="Aprende los cuatro pilares del marco de privacidad"
             href="/framework"
           />
           <QuickNavCard
             icon={<AlertCircle className="w-6 h-6" />}
-            title="Privacy Risks"
-            description="Understand 8+ identified privacy threats"
+            title="Riesgos de Privacidad"
+            description="Comprende 8+ amenazas de privacidad identificadas"
             href="/privacy-risks"
           />
           <QuickNavCard
             icon={<CheckCircle className="w-6 h-6" />}
-            title="Compliance Standards"
-            description="Map to Ley 1581, CONPES, OWASP, NIST"
+            title="Estándares de Cumplimiento"
+            description="Mapeo a Ley 1581, CONPES, OWASP, NIST"
             href="/compliance"
           />
           <QuickNavCard
             icon={<BookOpen className="w-6 h-6" />}
-            title="Case Studies"
-            description="Real-world HEI implementation scenarios"
+            title="Casos de Estudio"
+            description="Escenarios reales de implementación en IES"
             href="/scenarios"
           />
         </div>
@@ -48,20 +48,20 @@ export default function Page() {
       {/* Main Content Sections */}
       <section className="bg-secondary/50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-12 text-center">Why This Framework Matters</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Por Qué Este Marco es Importante</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <InfoCard
-              title="Regulatory Compliance"
-              description="Colombian Ley 1581 requires organizations to protect personal data. LLM implementation creates new compliance challenges that this framework addresses systematically."
+              title="Cumplimiento Normativo"
+              description="La Ley 1581 colombiana requiere que las organizaciones protejan datos personales. La implementación de LLM crea nuevos desafíos de cumplimiento que este marco aborda sistemáticamente."
             />
             <InfoCard
-              title="Institutional Risk"
-              description="Privacy breaches can expose sensitive student and research data, leading to regulatory penalties, reputational damage, and loss of stakeholder trust."
+              title="Riesgo Institucional"
+              description="Las brechas de privacidad pueden exponer datos sensibles de estudiantes e investigación, generando sanciones regulatorias, daño reputacional y pérdida de confianza de partes interesadas."
             />
             <InfoCard
-              title="Educational Need"
-              description="Many HEIs lack guidance on safe LLM adoption. This framework provides evidence-based recommendations grounded in research and international standards."
+              title="Necesidad Educativa"
+              description="Muchas IES carecen de orientación para adoptar LLM de forma segura. Este marco proporciona recomendaciones basadas en evidencia fundamentadas en investigación y estándares internacionales."
             />
           </div>
         </div>
@@ -69,28 +69,28 @@ export default function Page() {
 
       {/* Key Features */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold mb-12 text-center">Framework Components</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Componentes del Marco</h2>
 
         <div className="space-y-12">
           <FeatureItem
             number="1"
-            title="Comprehensive Risk Catalog"
-            description="8+ identified privacy risks specific to LLM adoption in HEIs, including data leakage, model behavior issues, system access vulnerabilities, and regulatory non-compliance."
+            title="Catálogo Integral de Riesgos"
+            description="8+ riesgos de privacidad identificados específicos para la adopción de LLM en IES, incluyendo fugas de datos, problemas de comportamiento de modelos, vulnerabilidades de acceso al sistema e incumplimiento normativo."
           />
           <FeatureItem
             number="2"
-            title="Compliance Mapping"
-            description="Alignment with Colombian Law 1581, CONPES 4144, OWASP Top 10 for LLMs, NIST Cybersecurity Framework, and ISO/IEC 27701 Privacy Management."
+            title="Mapeo de Cumplimiento"
+            description="Alineación con Ley 1581 colombiana, CONPES 4144, OWASP Top 10 para LLMs, Marco de Ciberseguridad NIST e ISO/IEC 27701 Gestión de Privacidad."
           />
           <FeatureItem
             number="3"
-            title="Real-World Scenarios"
-            description="4+ detailed case studies illustrating how Colombian HEIs can implement LLMs while protecting privacy across academic advising, research, HR, and security contexts."
+            title="Escenarios del Mundo Real"
+            description="4+ casos de estudio detallados que ilustran cómo las IES colombianas pueden implementar LLM protegiendo privacidad en contextos de asesoramiento académico, investigación, RRHH y seguridad."
           />
           <FeatureItem
             number="4"
-            title="Practical Guidance"
-            description="Mitigation strategies, implementation controls, and best practices for each identified risk, with actionable recommendations for institutional decision-makers."
+            title="Orientación Práctica"
+            description="Estrategias de mitigación, controles de implementación y mejores prácticas para cada riesgo identificado, con recomendaciones accionables para tomadores de decisiones institucionales."
           />
         </div>
       </section>
@@ -98,15 +98,15 @@ export default function Page() {
       {/* Call to Action */}
       <section className="bg-primary text-primary-foreground py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Learn More?</h2>
+          <h2 className="text-3xl font-bold mb-6">¿Listo para Aprender Más?</h2>
           <p className="text-lg mb-8 opacity-90">
-            Start with the framework overview to understand the four pillars, then explore specific risks and compliance requirements relevant to your institution.
+            Comienza con la descripción general del marco para entender los cuatro pilares, luego explora riesgos específicos y requisitos de cumplimiento relevantes para tu institución.
           </p>
           <Link
             href="/framework"
             className="inline-flex items-center gap-2 bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors"
           >
-            Start Exploring <ArrowRight className="w-4 h-4" />
+            Comenzar Exploración <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

@@ -1,11 +1,11 @@
-import { resources } from '@/lib/data/scenarios'
+import { resources } from '@/lib/data/resources'
 import { HeroSection } from '@/components/HeroSection'
 import { Metadata } from 'next'
 import { ExternalLink, FileText, Wrench } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Resources & References | LLM Privacy Framework',
-  description: 'Tools, templates, and references for LLM privacy assessment in higher education',
+  title: 'Recursos y Referencias | Marco de Privacidad LLM',
+  description: 'Herramientas, plantillas y referencias para evaluación de privacidad en educación superior',
 }
 
 export default function ResourcesPage() {

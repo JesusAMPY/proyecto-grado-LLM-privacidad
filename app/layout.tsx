@@ -5,9 +5,9 @@ import { Footer } from '@/components/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'LLM Privacy Framework | Educational Hub',
+  title: 'Marco de Privacidad LLM | Centro Educativo',
   description:
-    'Educational resource for privacy risk assessment in Colombian Higher Education Institutions implementing Large Language Models',
+    'Recurso educativo para evaluación de riesgos de privacidad en Instituciones de Educación Superior colombianas implementando Modelos de Lenguaje Grande',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -28,20 +28,21 @@ export const metadata: Metadata = {
   },
   keywords: [
     'LLM',
-    'Privacy',
+    'Privacidad',
     'Colombia',
-    'Higher Education',
-    'Data Protection',
+    'Educación Superior',
+    'Protección de Datos',
     'Ley 1581',
-    'Framework',
+    'Marco',
+    'CONPES 4144',
   ],
 }
 
 export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: light)', color: '#e74c3c' },
+    { media: '(prefers-color-scheme: dark)', color: '#ff6b6b' },
   ],
 }
 
@@ -51,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="es" className="bg-background">
       <body className="antialiased flex flex-col min-h-screen">
         <Navigation />
         <main className="flex-1">{children}</main>
