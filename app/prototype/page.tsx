@@ -1,24 +1,27 @@
 import { Metadata } from 'next'
 import { HeroSection } from '@/components/HeroSection'
+import { WorkflowDiagram } from '@/components/WorkflowDiagram'
+import { TimelineChart } from '@/components/TimelineChart'
 import Image from 'next/image'
+import { Shield, AlertTriangle, CheckCircle, Lock, BarChart3, Clock, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Prototipo Interactivo | Marco de Privacidad LLM',
-  description: 'Visualización de prototipos y mockups del marco implementado en instituciones de educación superior',
+  description: 'Visualización de prototipos, flujos de trabajo y gráficos del marco implementado en instituciones de educación superior',
 }
 
 export default function PrototypePage() {
   return (
     <>
       <HeroSection
-        title="Prototipos y Demostraciones"
+        title="Prototipos y Demostraciones Interactivas"
         subtitle="Visualización de cómo funciona el marco en la práctica"
-        description="Explora los mockups de los tableros y flujos de trabajo que las IES colombianas pueden utilizar para evaluar y gestionar riesgos de privacidad en la implementación de LLM."
+        description="Explora los workflows, timelines y gráficos que las IES colombianas pueden utilizar para evaluar y gestionar riesgos de privacidad en la implementación de LLM."
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
         {/* Framework Overview */}
-        <section className="mb-20">
+        <section>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-4 text-primary">Descripción General del Marco</h2>
@@ -55,8 +58,108 @@ export default function PrototypePage() {
           </div>
         </section>
 
+        {/* Risk Assessment Workflow */}
+        <section className="bg-secondary/10 p-8 rounded-lg">
+          <h2 className="text-3xl font-bold mb-2 text-secondary">Flujo de Evaluación de Riesgos</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Proceso paso a paso para identificar y evaluar riesgos de privacidad en tu institución.
+          </p>
+          <WorkflowDiagram
+            steps={[
+              {
+                id: 'identify',
+                title: 'Identificar',
+                description: 'Reconocer puntos de exposición de datos',
+                icon: <AlertTriangle className="w-6 h-6" />,
+                color: 'bg-red-500',
+              },
+              {
+                id: 'assess',
+                title: 'Evaluar',
+                description: 'Determinar severidad e impacto',
+                icon: <BarChart3 className="w-6 h-6" />,
+                color: 'bg-orange-500',
+              },
+              {
+                id: 'mitigate',
+                title: 'Mitigar',
+                description: 'Aplicar controles de seguridad',
+                icon: <Shield className="w-6 h-6" />,
+                color: 'bg-blue-500',
+              },
+              {
+                id: 'monitor',
+                title: 'Monitorear',
+                description: 'Vigilancia continua y auditoría',
+                icon: <CheckCircle className="w-6 h-6" />,
+                color: 'bg-green-500',
+              },
+            ]}
+          />
+        </section>
+
+        {/* Implementation Timeline */}
+        <section>
+          <h2 className="text-3xl font-bold mb-2 text-primary">Cronograma de Implementación (6 Meses)</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Plan estructurado para la adopción segura de LLM en tu institución de educación superior.
+          </p>
+          <TimelineChart
+            phases={[
+              {
+                phase: 1,
+                title: 'Planificación y Evaluación',
+                duration: 'Semanas 1-4',
+                tasks: [
+                  'Conducir evaluación de impacto en privacidad (DPIA)',
+                  'Identificar datos sensibles en tu institución',
+                  'Mapear estado actual de cumplimiento',
+                  'Establecer estructura de gobernanza',
+                ],
+                color: 'bg-red-500',
+              },
+              {
+                phase: 2,
+                title: 'Evaluación de Riesgos y Diseño',
+                duration: 'Semanas 5-12',
+                tasks: [
+                  'Realizar evaluación detallada de riesgos',
+                  'Diseñar controles técnicos',
+                  'Desarrollar políticas de manejo de datos',
+                  'Planificar estrategias de minimización de datos',
+                ],
+                color: 'bg-orange-500',
+              },
+              {
+                phase: 3,
+                title: 'Implementación y Pruebas',
+                duration: 'Semanas 13-24',
+                tasks: [
+                  'Desplegar controles técnicos',
+                  'Implementar controles de acceso',
+                  'Configurar sistemas de monitoreo',
+                  'Realizar pruebas de seguridad',
+                ],
+                color: 'bg-blue-500',
+              },
+              {
+                phase: 4,
+                title: 'Verificación y Monitoreo Continuo',
+                duration: 'Permanente',
+                tasks: [
+                  'Verificar cumplimiento en todos los pilares',
+                  'Establecer monitoreo continuo',
+                  'Realizar auditorías regulares',
+                  'Actualizar políticas según sea necesario',
+                ],
+                color: 'bg-green-500',
+              },
+            ]}
+          />
+        </section>
+
         {/* Risk Assessment Dashboard */}
-        <section className="mb-20">
+        <section>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative h-96 order-2 md:order-1">
               <Image
@@ -73,18 +176,22 @@ export default function PrototypePage() {
               </p>
               <div className="space-y-4">
                 <FeatureBullet
+                  icon={<AlertTriangle className="w-5 h-5" />}
                   title="Identificación de Riesgos"
                   description="Checklist estructurado de amenazas de privacidad específicas para LLM"
                 />
                 <FeatureBullet
+                  icon={<BarChart3 className="w-5 h-5" />}
                   title="Evaluación de Severidad"
                   description="Clasificación de riesgos por nivel: crítico, alto, medio, bajo"
                 />
                 <FeatureBullet
+                  icon={<Zap className="w-5 h-5" />}
                   title="Análisis de Impacto"
                   description="Evaluación de consecuencias en datos, reputación y cumplimiento"
                 />
                 <FeatureBullet
+                  icon={<Lock className="w-5 h-5" />}
                   title="Estrategias de Mitigación"
                   description="Controles y acciones recomendadas para cada riesgo identificado"
                 />
@@ -94,36 +201,36 @@ export default function PrototypePage() {
         </section>
 
         {/* Risk Heatmap */}
-        <section className="mb-20">
+        <section>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-4 text-accent">Mapa de Severidad de Riesgos</h2>
+              <h2 className="text-3xl font-bold mb-4 text-accent">Mapa de Calor de Riesgos</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Una visualización de matriz que muestra la intersección entre categorías de riesgos e impactos potenciales, permitiendo priorizar las acciones de mitigación.
+                Visualización de la severidad de riesgos según categorías e impacto potencial. Ayuda a priorizar qué riesgos abordar primero.
               </p>
-              <div className="space-y-4">
-                <FeatureBullet
-                  title="Matriz de Riesgos"
-                  description="Visualización de 4 categorías x 4 tipos de impacto"
-                />
-                <FeatureBullet
-                  title="Codificación por Color"
-                  description="Indica severidad: verde (bajo), naranja (medio), rojo (crítico)"
-                />
-                <FeatureBullet
-                  title="Puntuación de Riesgos"
-                  description="Scores numéricos para comparación y seguimiento"
-                />
-                <FeatureBullet
-                  title="Resumen Ejecutivo"
-                  description="Estadísticas agregadas de riesgos identificados"
-                />
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 rounded"></div>
+                  <span className="text-muted-foreground">Bajo - Gestión estándar</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+                  <span className="text-muted-foreground">Medio - Requiere atención</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-orange-500 rounded"></div>
+                  <span className="text-muted-foreground">Alto - Prioritario</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 rounded"></div>
+                  <span className="text-muted-foreground">Crítico - Acción inmediata</span>
+                </div>
               </div>
             </div>
             <div className="relative h-96">
               <Image
                 src="/images/risk-heatmap.png"
-                alt="Mapa de calor de severidad de riesgos"
+                alt="Mapa de calor de riesgos"
                 fill
                 className="object-contain"
               />
@@ -132,132 +239,104 @@ export default function PrototypePage() {
         </section>
 
         {/* Compliance Mapping */}
-        <section className="mb-20">
+        <section>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative h-96 order-2 md:order-1">
               <Image
                 src="/images/compliance-mapping.png"
-                alt="Mapeo de cumplimiento normativo"
+                alt="Mapeo de cumplimiento"
                 fill
                 className="object-contain"
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-4 text-primary">Mapeo de Cumplimiento Normativo</h2>
+              <h2 className="text-3xl font-bold mb-4 text-primary">Mapeo de Cumplimiento Regulatorio</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Muestra cómo el marco se alinea con regulaciones clave colombianas e internacionales para garantizar conformidad con requisitos legales y estándares de seguridad.
+                Alineación sistemática de tu implementación de LLM con todas las regulaciones colombianas e internacionales aplicables.
               </p>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 rounded bg-primary"></div>
-                  <span><strong>Ley 1581:</strong> Protección de datos personales colombiana</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 rounded bg-secondary"></div>
-                  <span><strong>CONPES 4144:</strong> Estrategia nacional de transformación digital</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 rounded bg-accent"></div>
-                  <span><strong>OWASP Top 10:</strong> Seguridad en aplicaciones de LLM</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 rounded bg-green-500"></div>
-                  <span><strong>NIST & ISO/IEC:</strong> Estándares de ciberseguridad e privacidad</span>
-                </div>
+                <ComplianceBullet framework="Ley 1581 de 2012" status="Habeas Data Colombiano" />
+                <ComplianceBullet framework="CONPES 4144" status="Estrategia IA Nacional" />
+                <ComplianceBullet framework="OWASP Top 10" status="Vulnerabilidades LLM" />
+                <ComplianceBullet framework="NIST Framework" status="Ciberseguridad" />
+                <ComplianceBullet framework="ISO/IEC 27701" status="Gestión de Privacidad" />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Implementation Timeline */}
-        <section className="mb-20">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-4 text-secondary">Cronograma de Implementación</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Un plan de 6 meses que muestra las fases de adopción de LLM en una IES, desde planeación inicial hasta despliegue en producción, con hitos y responsables claramente definidos.
-              </p>
-              <div className="space-y-3 text-sm">
-                <PhaseBullet month="Mes 1" phase="Planeación" color="bg-red-100" />
-                <PhaseBullet month="Mes 2" phase="Evaluación" color="bg-orange-100" />
-                <PhaseBullet month="Mes 3" phase="Desarrollo de Políticas" color="bg-yellow-100" />
-                <PhaseBullet month="Mes 4" phase="Implementación Técnica" color="bg-blue-100" />
-                <PhaseBullet month="Mes 5" phase="Pruebas y Cumplimiento" color="bg-green-100" />
-                <PhaseBullet month="Mes 6" phase="Despliegue" color="bg-purple-100" />
-              </div>
-            </div>
-            <div className="relative h-96">
-              <Image
-                src="/images/implementation-timeline.png"
-                alt="Cronograma de implementación de 6 meses"
-                fill
-                className="object-contain"
-              />
             </div>
           </div>
         </section>
 
         {/* Real-World Scenario */}
-        <section className="mb-20">
+        <section>
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-96 order-2 md:order-1">
-              <Image
-                src="/images/scenario-workflow.png"
-                alt="Flujo de trabajo del escenario real"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-4 text-accent">Escenario Real: Asesoramiento Académico con LLM</h2>
+            <div>
+              <h2 className="text-3xl font-bold mb-4 text-secondary">Escenario Real: Asesoría Académica con LLM</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Ejemplo práctico de cómo una universidad colombiana puede implementar un LLM para asesoramiento académico mientras mantiene la privacidad de estudiantes y datos institucionales.
+                Ejemplo práctico de cómo implementar un chatbot LLM para asesoría académica mientras se protege la privacidad de estudiantes.
               </p>
               <div className="space-y-4">
                 <ScenarioStep
                   step="1"
-                  title="Estudiante Formula Consulta"
-                  description="Un estudiante pregunta sobre requisitos de pregrado"
+                  title="Entrada Segura"
+                  description="Estudiante envía consulta académica general (sin datos personales)"
                 />
                 <ScenarioStep
                   step="2"
-                  title="Procesamiento Seguro"
-                  description="LLM procesa solo datos mínimos y anonimizados"
+                  title="Procesamiento"
+                  description="LLM procesa solo información anonimizada sobre políticas académicas"
                 />
                 <ScenarioStep
                   step="3"
-                  title="Verificaciones de Privacidad"
-                  description="Validaciones automáticas de cumplimiento de Ley 1581"
+                  title="Controles Aplicados"
+                  description="Encriptación, auditoría de acceso, y límites de datos automáticos"
                 />
                 <ScenarioStep
                   step="4"
                   title="Respuesta Segura"
-                  description="Información útil sin exponer datos personales o sensibles"
+                  description="LLM retorna asesoramiento académico verificado sin datos sensibles"
                 />
               </div>
+            </div>
+            <div className="relative h-96">
+              <Image
+                src="/images/scenario-workflow.png"
+                alt="Flujo de escenario real"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </section>
 
-        {/* Key Takeaways */}
-        <section className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 md:p-12">
-          <h2 className="text-2xl font-bold mb-8 text-center">Puntos Clave del Marco</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-3">4</div>
-              <p className="font-semibold mb-2">Pilares Fundamentales</p>
-              <p className="text-muted-foreground text-sm">Evaluación, Clasificación, Mapeo, Controles</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-secondary mb-3">8+</div>
-              <p className="font-semibold mb-2">Riesgos Identificados</p>
-              <p className="text-muted-foreground text-sm">Con estrategias de mitigación específicas</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-3">5</div>
-              <p className="font-semibold mb-2">Marcos de Cumplimiento</p>
-              <p className="text-muted-foreground text-sm">Ley 1581, CONPES, OWASP, NIST, ISO</p>
-            </div>
+        {/* Implementation Timeline Image */}
+        <section className="relative h-96">
+          <h2 className="text-3xl font-bold mb-8 text-primary">Cronograma Visual de Implementación</h2>
+          <Image
+            src="/images/implementation-timeline.png"
+            alt="Cronograma de implementación"
+            fill
+            className="object-contain"
+          />
+        </section>
+
+        {/* Framework Overview Image */}
+        <section className="relative h-96">
+          <h2 className="text-3xl font-bold mb-8 text-accent">Descripción General Completa del Marco</h2>
+          <Image
+            src="/images/framework-overview.png"
+            alt="Descripción general del marco"
+            fill
+            className="object-contain"
+          />
+        </section>
+
+        {/* Summary Stats */}
+        <section className="bg-primary/10 p-8 rounded-lg">
+          <h2 className="text-3xl font-bold mb-8 text-center text-foreground">Alcance del Marco</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            <StatCard number="4" label="Pilares Fundamentales" />
+            <StatCard number="8+" label="Riesgos Identificados" />
+            <StatCard number="5" label="Marcos de Cumplimiento" />
+            <StatCard number="6" label="Meses de Implementación" />
           </div>
         </section>
       </div>
@@ -265,23 +344,31 @@ export default function PrototypePage() {
   )
 }
 
-function FeatureBullet({ title, description }: { title: string; description: string }) {
+function FeatureBullet({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode
+  title: string
+  description: string
+}) {
   return (
-    <div className="flex gap-3">
-      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+    <div className="flex gap-4">
+      <div className="flex-shrink-0 text-secondary">{icon}</div>
       <div>
-        <p className="font-semibold text-foreground">{title}</p>
+        <h4 className="font-semibold text-foreground mb-1">{title}</h4>
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </div>
   )
 }
 
-function PhaseBullet({ month, phase, color }: { month: string; phase: string; color: string }) {
+function ComplianceBullet({ framework, status }: { framework: string; status: string }) {
   return (
-    <div className="flex items-center gap-3">
-      <div className={`${color} px-3 py-1 rounded text-xs font-bold`}>{month}</div>
-      <span className="text-foreground">{phase}</span>
+    <div className="flex items-center justify-between p-3 rounded-lg bg-card border border-border hover:border-primary transition-colors">
+      <span className="font-semibold text-foreground">{framework}</span>
+      <span className="text-sm text-muted-foreground">{status}</span>
     </div>
   )
 }
@@ -289,15 +376,22 @@ function PhaseBullet({ month, phase, color }: { month: string; phase: string; co
 function ScenarioStep({ step, title, description }: { step: string; title: string; description: string }) {
   return (
     <div className="flex gap-4">
-      <div className="flex-shrink-0">
-        <div className="flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground font-bold text-sm">
-          {step}
-        </div>
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold">
+        {step}
       </div>
       <div>
-        <h4 className="font-semibold text-foreground">{title}</h4>
+        <h4 className="font-semibold text-foreground mb-1">{title}</h4>
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
+    </div>
+  )
+}
+
+function StatCard({ number, label }: { number: string; label: string }) {
+  return (
+    <div className="bg-card border-2 border-primary rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+      <div className="text-4xl font-bold text-primary mb-2">{number}</div>
+      <p className="text-sm font-semibold text-foreground">{label}</p>
     </div>
   )
 }

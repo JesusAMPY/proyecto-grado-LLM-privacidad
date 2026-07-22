@@ -3,25 +3,24 @@ import { HeroSection } from '@/components/HeroSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Framework Overview | LLM Privacy Framework',
-  description: 'Comprehensive framework for assessing and managing privacy risks in LLM adoption',
+  title: 'Descripción General del Marco | Marco de Privacidad LLM',
+  description: 'Marco integral para evaluar y gestionar riesgos de privacidad en la adopción de LLM',
 }
 
 export default function FrameworkPage() {
   return (
     <>
       <HeroSection
-        title="Framework Overview"
-        subtitle="Four pillars for safe and compliant LLM adoption in Higher Education Institutions"
-        description="This framework provides a structured approach to identifying and managing privacy risks when implementing Large Language Models, aligned with Colombian regulations and international standards."
+        title="Descripción General del Marco"
+        subtitle="Cuatro pilares para una adopción segura y conforme de LLM en Instituciones de Educación Superior"
+        description="Este marco proporciona un enfoque estructurado para identificar y gestionar riesgos de privacidad al implementar Modelos de Lenguaje Grande, alineado con regulaciones colombianas y estándares internacionales."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-4">The Four Pillars</h2>
+          <h2 className="text-3xl font-bold mb-4">Los Cuatro Pilares</h2>
           <p className="text-lg text-muted-foreground mb-12 max-w-3xl">
-            The framework is built on four interconnected pillars that work together to ensure comprehensive privacy
-            protection and regulatory compliance throughout the LLM lifecycle.
+            El marco se construye sobre cuatro pilares interconectados que trabajan juntos para garantizar protección integral de privacidad y cumplimiento normativo durante todo el ciclo de vida del LLM.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -40,7 +39,7 @@ export default function FrameworkPage() {
                 <p className="text-muted-foreground mb-4">{pillar.description}</p>
 
                 <div className="space-y-2">
-                  <p className="text-sm font-semibold text-foreground">Key Components:</p>
+                    <p className="text-sm font-semibold text-foreground">Componentes Clave:</p>
                   <ul className="space-y-1">
                     {pillar.details.map((detail, idx) => (
                       <li key={idx} className="text-sm text-muted-foreground flex gap-2">
@@ -57,7 +56,7 @@ export default function FrameworkPage() {
 
         {/* Framework Relationships */}
         <section className="bg-secondary/50 p-8 rounded-lg mb-20">
-          <h2 className="text-2xl font-bold mb-6">How the Pillars Work Together</h2>
+          <h2 className="text-2xl font-bold mb-6">Cómo Trabajan los Pilares Juntos</h2>
 
           <div className="space-y-6">
             <ProcessStep
@@ -85,7 +84,7 @@ export default function FrameworkPage() {
 
         {/* Compliance Alignment */}
         <section>
-          <h2 className="text-3xl font-bold mb-12">Compliance Alignment</h2>
+          <h2 className="text-3xl font-bold mb-12">Alineación de Cumplimiento</h2>
 
           <div className="space-y-6">
             {complianceStandards.map((standard) => (

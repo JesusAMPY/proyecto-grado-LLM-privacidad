@@ -4,26 +4,24 @@ import { Metadata } from 'next'
 import { BookOpen, Lightbulb, TrendingUp } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Case Studies & Scenarios | LLM Privacy Framework',
-  description: 'Real-world case studies showing how Colombian HEIs can implement LLMs while protecting privacy',
+  title: 'Casos de Estudio y Escenarios | Marco de Privacidad LLM',
+  description: 'Casos de estudio reales mostrando cómo las IES colombianas pueden implementar LLM protegiendo privacidad',
 }
 
 export default function ScenariosPage() {
   return (
     <>
       <HeroSection
-        title="Case Studies & Scenarios"
-        subtitle="Real-world LLM implementation scenarios in Colombian higher education"
-        description="These case studies illustrate how institutions can navigate privacy challenges when deploying LLMs across different institutional functions."
+        title="Casos de Estudio y Escenarios"
+        subtitle="Escenarios reales de implementación de LLM en educación superior colombiana"
+        description="Estos casos de estudio ilustran cómo las instituciones pueden navegar desafíos de privacidad al desplegar LLM en diferentes funciones institucionales."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-4">Implementation Scenarios</h2>
+          <h2 className="text-3xl font-bold mb-4">Escenarios de Implementación</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
-            Below are detailed scenarios showing how Colombian higher education institutions can implement LLMs in
-            different contexts while identifying and mitigating privacy risks. Each scenario includes the institutional
-            context, specific privacy challenges, proposed solutions, and key lessons learned.
+            A continuación se presentan escenarios detallados mostrando cómo las instituciones de educación superior colombianas pueden implementar LLM en diferentes contextos mientras identifican y mitigan riesgos de privacidad. Cada escenario incluye el contexto institucional, desafíos específicos de privacidad, soluciones propuestas y lecciones clave aprendidas.
           </p>
         </section>
 
@@ -36,7 +34,7 @@ export default function ScenariosPage() {
 
         {/* Cross-Cutting Lessons */}
         <section className="mt-20 pt-20 border-t border-border">
-          <h2 className="text-3xl font-bold mb-12">Cross-Cutting Lessons</h2>
+          <h2 className="text-3xl font-bold mb-12">Lecciones Transversales</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <LessonCard
@@ -74,7 +72,7 @@ export default function ScenariosPage() {
 
         {/* Decision Framework */}
         <section className="mt-20 pt-20 border-t border-border">
-          <h2 className="text-3xl font-bold mb-12">LLM Adoption Decision Framework</h2>
+          <h2 className="text-3xl font-bold mb-12">Marco de Decisión para Adopción de LLM</h2>
 
           <div className="bg-card border-2 border-primary p-8 rounded-lg mb-8">
             <p className="text-muted-foreground mb-6">

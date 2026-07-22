@@ -4,55 +4,53 @@ import { Metadata } from 'next'
 import { CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Compliance & Standards | LLM Privacy Framework',
-  description: 'Alignment with Colombian law, CONPES 4144, OWASP, NIST, and ISO/IEC 27701',
+  title: 'Cumplimiento y Estándares | Marco de Privacidad LLM',
+  description: 'Alineación con ley colombiana, CONPES 4144, OWASP, NIST e ISO/IEC 27701',
 }
 
 export default function CompliancePage() {
   return (
     <>
       <HeroSection
-        title="Compliance & Standards"
-        subtitle="Alignment with Colombian regulations and international best practices"
-        description="This page maps LLM privacy requirements to applicable Colombian law, national policy, and international standards to ensure institutional compliance."
+        title="Cumplimiento y Estándares"
+        subtitle="Alineación con regulaciones colombianas y mejores prácticas internacionales"
+        description="Esta página mapea los requisitos de privacidad de LLM a la ley colombiana aplicable, políticas nacionales y estándares internacionales para garantizar el cumplimiento institucional."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Compliance Overview */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-4">Compliance Landscape</h2>
+          <h2 className="text-3xl font-bold mb-4">Panorama de Cumplimiento</h2>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <ComplianceType
-              jurisdiction="Colombian"
+              jurisdiction="Colombiana"
               standards={[
-                { name: 'Ley 1581 de 2012', description: 'Constitutional right to personal data protection' },
-                { name: 'CONPES 4144', description: 'National AI and data strategy' },
+                { name: 'Ley 1581 de 2012', description: 'Derecho constitucional a la protección de datos personales' },
+                { name: 'CONPES 4144', description: 'Estrategia nacional de IA y datos' },
               ]}
             />
             <ComplianceType
-              jurisdiction="International"
+              jurisdiction="Internacional"
               standards={[
-                { name: 'OWASP Top 10', description: 'LLM-specific security vulnerabilities' },
-                { name: 'NIST Framework', description: 'Cybersecurity and AI risk management' },
-                { name: 'ISO/IEC 27701', description: 'Privacy management standards' },
+                { name: 'OWASP Top 10', description: 'Vulnerabilidades de seguridad específicas para LLM' },
+                { name: 'Marco NIST', description: 'Ciberseguridad y gestión de riesgos de IA' },
+                { name: 'ISO/IEC 27701', description: 'Estándares de gestión de privacidad' },
               ]}
             />
           </div>
 
           <div className="p-6 rounded-lg bg-secondary/50 border border-border">
-            <h3 className="font-semibold mb-3">Key Principle: Privacy by Design</h3>
+            <h3 className="font-semibold mb-3">Principio Clave: Privacidad por Diseño</h3>
             <p className="text-muted-foreground">
-              All frameworks emphasize incorporating privacy and security considerations from the earliest stages of LLM
-              implementation, not as an afterthought. This includes data minimization, encryption, access controls, and
-              continuous monitoring.
+              Todos los marcos enfatizan incorporar consideraciones de privacidad y seguridad desde las etapas iniciales de la implementación de LLM, no como una consideración posterior. Esto incluye minimización de datos, encriptación, controles de acceso y monitoreo continuo.
             </p>
           </div>
         </section>
 
         {/* Detailed Standards */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Standards in Detail</h2>
+          <h2 className="text-3xl font-bold mb-8">Estándares en Detalle</h2>
 
           <div className="space-y-8">
             {complianceStandards.map((standard) => (
@@ -63,7 +61,7 @@ export default function CompliancePage() {
 
         {/* Compliance Mapping Matrix */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Privacy Protection Mapping</h2>
+          <h2 className="text-3xl font-bold mb-8">Mapeo de Protección de Privacidad</h2>
 
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
