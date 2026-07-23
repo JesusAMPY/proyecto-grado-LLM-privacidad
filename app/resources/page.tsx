@@ -103,34 +103,34 @@ export default function ResourcesPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <ReadingItem
-              title="Understanding Ley 1581 for HEIs"
-              description="A guide to the key requirements of Colombian data protection law and how they apply to higher education institution specific contexts including student records, research data, and administrative operations."
-              topics={['Personal Data Protection', 'Institutional Obligations', 'Data Subject Rights']}
+              title="Comprendiendo Ley 1581 para IES"
+              description="Una guía a los requisitos clave de la ley de protección de datos colombiana y cómo se aplican en contextos específicos de instituciones de educación superior incluyendo registros de estudiantes, datos de investigación y operaciones administrativas."
+              topics={['Protección de Datos Personales', 'Obligaciones Institucionales', 'Derechos de Sujetos de Datos']}
             />
             <ReadingItem
-              title="Privacy by Design in AI Systems"
-              description="Principles for incorporating privacy considerations from the start of LLM implementations, rather than as an afterthought. Covers data minimization, consent mechanisms, and privacy-preserving technologies."
-              topics={['Privacy Engineering', 'Data Minimization', 'Consent Management']}
+              title="Privacidad por Diseño en Sistemas de IA"
+              description="Principios para incorporar consideraciones de privacidad desde el inicio de implementaciones de LLM, en lugar de como una consideración posterior. Cubre minimización de datos, mecanismos de consentimiento y tecnologías que preservan privacidad."
+              topics={['Ingeniería de Privacidad', 'Minimización de Datos', 'Gestión de Consentimiento']}
             />
             <ReadingItem
-              title="LLM Security & Robustness"
-              description="Technical overview of LLM vulnerabilities including prompt injection, model poisoning, and inference attacks. Practical mitigation strategies aligned with OWASP and NIST frameworks."
-              topics={['Security Vulnerabilities', 'Attack Vectors', 'Defense Mechanisms']}
+              title="Seguridad y Robustez de LLM"
+              description="Descripción técnica de vulnerabilidades de LLM incluyendo inyección de prompts, envenenamiento de modelos y ataques de inferencia. Estrategias de mitigación práctica alineadas con marcos OWASP y NIST."
+              topics={['Vulnerabilidades de Seguridad', 'Vectores de Ataque', 'Mecanismos de Defensa']}
             />
             <ReadingItem
-              title="Bias Detection & Mitigation"
-              description="Understanding algorithmic bias in LLMs and practical approaches to detect and mitigate discriminatory outcomes. Critical for fair institutional decision-making with AI systems."
-              topics={['Fairness Assessment', 'Bias Auditing', 'Mitigation Strategies']}
+              title="Detección y Mitigación de Sesgo"
+              description="Comprensión del sesgo algorítmico en LLM y enfoques prácticos para detectar y mitigar resultados discriminatorios. Crítico para toma de decisiones institucional justa con sistemas de IA."
+              topics={['Evaluación de Equidad', 'Auditoría de Sesgo', 'Estrategias de Mitigación']}
             />
             <ReadingItem
-              title="Governance Frameworks for AI"
-              description="How to establish organizational governance structures for responsible AI adoption, including decision-making processes, oversight mechanisms, and accountability frameworks."
-              topics={['AI Governance', 'Decision Frameworks', 'Accountability']}
+              title="Marcos de Gobernanza para IA"
+              description="Cómo establecer estructuras de gobernanza organizacional para adopción responsable de IA, incluyendo procesos de toma de decisiones, mecanismos de supervisión y marcos de responsabilidad."
+              topics={['Gobernanza de IA', 'Marcos de Decisión', 'Responsabilidad']}
             />
             <ReadingItem
-              title="Incident Response for Data Breaches"
-              description="Procedures for responding to privacy incidents and data breaches, including detection, containment, notification, and remediation steps required under Ley 1581."
-              topics={['Incident Detection', 'Breach Response', 'Notification Procedures']}
+              title="Respuesta a Incidentes para Brechas de Datos"
+              description="Procedimientos para responder a incidentes de privacidad y brechas de datos, incluyendo detección, contención, notificación y pasos de remediación requeridos bajo Ley 1581."
+              topics={['Detección de Incidentes', 'Respuesta a Brechas', 'Procedimientos de Notificación']}
             />
           </div>
         </section>
@@ -141,41 +141,41 @@ export default function ResourcesPage() {
 
           <div className="space-y-6">
             <GuideCard
-              title="Conducting a Privacy Impact Assessment (DPIA)"
+              title="Conduciendo una Evaluación de Impacto de Privacidad (DPIA)"
               steps={[
-                'Define the scope: What data and systems are involved?',
-                'Identify the purpose: Why is this LLM implementation needed?',
-                'Assess risks: What privacy threats exist?',
-                'Design controls: What measures will mitigate risks?',
-                'Document findings: Create a detailed DPIA report',
-                'Review and approve: Governance committee review',
-                'Monitor: Regular updates as implementation evolves',
+                'Define el alcance: ¿Qué datos y sistemas están involucrados?',
+                'Identifica el propósito: ¿Por qué se necesita esta implementación de LLM?',
+                'Evalúa riesgos: ¿Qué amenazas de privacidad existen?',
+                'Diseña controles: ¿Qué medidas mitigarán los riesgos?',
+                'Documenta hallazgos: Crea un reporte DPIA detallado',
+                'Revisa y aprueba: Revisión del comité de gobernanza',
+                'Monitorea: Actualizaciones regulares mientras evoluciona la implementación',
               ]}
             />
 
             <GuideCard
-              title="Establishing Data Processing Agreements with Third Parties"
+              title="Estableciendo Acuerdos de Procesamiento de Datos con Terceros"
               steps={[
-                'Identify external LLM providers or data processors',
-                'Assess their security and privacy practices',
-                'Negotiate contractual terms including data handling, deletion, and compliance',
-                'Include Ley 1581 compliance requirements explicitly',
-                'Ensure audit rights and incident notification provisions',
-                'Document the agreement and maintain in records',
-                'Conduct periodic security reviews',
+                'Identifica proveedores externos de LLM o procesadores de datos',
+                'Evalúa sus prácticas de seguridad y privacidad',
+                'Negocia términos contractuales incluyendo manejo de datos, eliminación y cumplimiento',
+                'Incluye explícitamente requisitos de cumplimiento de Ley 1581',
+                'Asegura derechos de auditoría y disposiciones de notificación de incidentes',
+                'Documenta el acuerdo y mantenlo en registros',
+                'Realiza revisiones de seguridad periódicas',
               ]}
             />
 
             <GuideCard
-              title="Implementing Data Minimization for LLM Use Cases"
+              title="Implementando Minimización de Datos para Casos de Uso de LLM"
               steps={[
-                'Document what data the LLM truly needs',
-                'Remove unnecessary identifying information',
-                'Aggregate or anonymize where possible',
-                'Use tokenization for sensitive values',
-                'Implement access controls limiting who provides data',
-                'Monitor actual data usage to verify minimization',
-                'Regularly audit to ensure ongoing minimization',
+                'Documenta qué datos el LLM realmente necesita',
+                'Elimina información de identificación innecesaria',
+                'Agrega o anonimiza donde sea posible',
+                'Usa tokenización para valores sensibles',
+                'Implementa controles de acceso limitando quién proporciona datos',
+                'Monitorea el uso real de datos para verificar minimización',
+                'Audita regularmente para asegurar minimización continua',
               ]}
             />
           </div>
@@ -183,17 +183,17 @@ export default function ResourcesPage() {
 
         {/* Useful Links */}
         <section className="bg-secondary/50 p-8 rounded-lg mb-16">
-          <h2 className="text-2xl font-bold mb-6">Useful Links & Organizations</h2>
+          <h2 className="text-2xl font-bold mb-6">Enlaces Útiles y Organizaciones</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <LinkCategory
-              title="Colombian Regulatory Authorities"
+              title="Autoridades Regulatorias Colombianas"
               links={[
-                { label: 'SIC (Superintendencia de Industria y Comercio)', description: 'Colombian data protection regulator' },
-                { label: 'Ministerio de Tecnologías de la Información', description: 'Ministry overseeing CONPES 4144' },
+                { label: 'SIC (Superintendencia de Industria y Comercio)', description: 'Regulador de protección de datos colombiano' },
+                { label: 'Ministerio de Tecnologías de la Información', description: 'Ministerio que supervisa CONPES 4144' },
                 {
                   label: 'Consejo Nacional de Seguridad Informática',
-                  description: 'National cybersecurity council',
+                  description: 'Consejo de ciberseguridad nacional',
                 },
               ]}
             />

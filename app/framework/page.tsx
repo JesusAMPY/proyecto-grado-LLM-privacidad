@@ -61,23 +61,23 @@ export default function FrameworkPage() {
           <div className="space-y-6">
             <ProcessStep
               step="1"
-              title="Risk Assessment"
-              description="Begin by identifying and evaluating privacy risks specific to your LLM implementation. This forms the foundation for all subsequent decisions."
+              title="Evaluación de Riesgos"
+              description="Comienza identificando y evaluando riesgos de privacidad específicos para tu implementación de LLM. Esto forma la base para todas las decisiones posteriores."
             />
             <ProcessStep
               step="2"
-              title="Data Classification"
-              description="Classify institutional data based on sensitivity and regulatory requirements. This determines which data can be used with LLMs and how it must be protected."
+              title="Clasificación de Datos"
+              description="Clasifica datos institucionales según sensibilidad y requisitos regulatorios. Esto determina qué datos pueden usarse con LLM y cómo deben protegerse."
             />
             <ProcessStep
               step="3"
-              title="Compliance Mapping"
-              description="Map your LLM practices to applicable regulations (Ley 1581, CONPES 4144) and standards (OWASP, NIST, ISO 27701). Identify compliance gaps."
+              title="Mapeo de Cumplimiento"
+              description="Mapea tus prácticas de LLM a regulaciones aplicables (Ley 1581, CONPES 4144) y estándares (OWASP, NIST, ISO 27701). Identifica brechas de cumplimiento."
             />
             <ProcessStep
               step="4"
-              title="Implementation Controls"
-              description="Deploy technical and organizational controls to mitigate risks and ensure compliance. This includes encryption, access controls, and monitoring mechanisms."
+              title="Controles de Implementación"
+              description="Despliega controles técnicos y organizacionales para mitigar riesgos y garantizar cumplimiento. Esto incluye encriptación, controles de acceso y mecanismos de monitoreo."
             />
           </div>
         </section>
@@ -100,7 +100,7 @@ export default function FrameworkPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-sm font-semibold text-foreground">Key Requirements:</p>
+                  <p className="text-sm font-semibold text-foreground">Requisitos Clave:</p>
                   <ul className="grid md:grid-cols-2 gap-3">
                     {standard.keyRequirements.map((req, idx) => (
                       <li key={idx} className="text-sm text-muted-foreground flex gap-2">
@@ -117,37 +117,37 @@ export default function FrameworkPage() {
 
         {/* Implementation Timeline */}
         <section className="mt-20 pt-20 border-t border-border">
-          <h2 className="text-2xl font-bold mb-8">Recommended Implementation Timeline</h2>
+          <h2 className="text-2xl font-bold mb-8">Cronograma de Implementación Recomendado</h2>
 
           <div className="space-y-4">
             <TimelineItem
-              phase="Phase 1"
-              title="Assessment & Planning"
-              duration="Weeks 1-4"
+              phase="Fase 1"
+              title="Evaluación y Planificación"
+              duration="Semanas 1-4"
               items={[
-                'Conduct privacy impact assessment (DPIA)',
-                'Identify sensitive data in your institution',
-                'Map current compliance status',
-                'Establish governance structure',
+                'Realizar evaluación de impacto de privacidad (DPIA)',
+                'Identificar datos sensibles en tu institución',
+                'Mapear estado de cumplimiento actual',
+                'Establecer estructura de gobernanza',
               ]}
             />
             <TimelineItem
-              phase="Phase 2"
-              title="Risk Evaluation & Controls Design"
-              duration="Weeks 5-12"
+              phase="Fase 2"
+              title="Evaluación de Riesgos y Diseño de Controles"
+              duration="Semanas 5-12"
               items={[
-                'Perform detailed risk assessment',
-                'Design technical controls',
-                'Develop data handling policies',
-                'Plan data minimization strategies',
+                'Realizar evaluación de riesgos detallada',
+                'Diseñar controles técnicos',
+                'Desarrollar políticas de manejo de datos',
+                'Planificar estrategias de minimización de datos',
               ]}
             />
             <TimelineItem
-              phase="Phase 3"
-              title="Implementation & Testing"
-              duration="Weeks 13-24"
+              phase="Fase 3"
+              title="Implementación y Pruebas"
+              duration="Semanas 13-24"
               items={[
-                'Deploy technical controls',
+                'Desplegar controles técnicos',
                 'Implement access controls',
                 'Configure monitoring systems',
                 'Conduct security testing',

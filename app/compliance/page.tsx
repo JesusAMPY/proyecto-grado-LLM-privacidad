@@ -67,7 +67,7 @@ export default function CompliancePage() {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-primary text-primary-foreground">
-                  <th className="border border-border px-4 py-3 text-left font-semibold">Privacy Protection Area</th>
+                  <th className="border border-border px-4 py-3 text-left font-semibold">Área de Protección de Privacidad</th>
                   <th className="border border-border px-4 py-3 text-left font-semibold">Ley 1581</th>
                   <th className="border border-border px-4 py-3 text-left font-semibold">CONPES 4144</th>
                   <th className="border border-border px-4 py-3 text-left font-semibold">OWASP/NIST</th>
@@ -91,7 +91,7 @@ export default function CompliancePage() {
 
         {/* Implementation Checklist */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Compliance Implementation Checklist</h2>
+          <h2 className="text-3xl font-bold mb-8">Lista de Verificación de Implementación de Cumplimiento</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {checklistItems.map((section, idx) => (
@@ -102,32 +102,32 @@ export default function CompliancePage() {
 
         {/* Key Compliance Obligations */}
         <section className="bg-secondary/50 p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-8">Key Colombian Compliance Obligations</h2>
+          <h2 className="text-2xl font-bold mb-8">Obligaciones Clave de Cumplimiento Colombiano</h2>
 
           <div className="space-y-6">
             <ObligationItem
-              title="Lawful Basis for Processing"
-              description="Organizations must establish a legal basis for processing personal data through LLMs, typically requiring explicit informed consent from data subjects under Ley 1581."
+              title="Base Legal para el Procesamiento"
+              description="Las organizaciones deben establecer una base legal para procesar datos personales a través de LLM, normalmente requiriendo consentimiento informado explícito de los sujetos de datos bajo Ley 1581."
             />
             <ObligationItem
-              title="Data Subject Rights"
-              description="Individuals have rights to access, rectify, delete, and export their personal data processed by LLMs. Organizations must establish mechanisms to fulfill these rights."
+              title="Derechos de los Sujetos de Datos"
+              description="Los individuos tienen derechos de acceso, rectificación, eliminación y exportación de sus datos personales procesados por LLM. Las organizaciones deben establecer mecanismos para cumplir estos derechos."
             />
             <ObligationItem
-              title="Data Security Measures"
-              description="Organizations must implement administrative, physical, and technical measures to protect data from unauthorized access, loss, or alteration."
+              title="Medidas de Seguridad de Datos"
+              description="Las organizaciones deben implementar medidas administrativas, físicas y técnicas para proteger datos de acceso no autorizado, pérdida o alteración."
             />
             <ObligationItem
-              title="Incident Notification"
-              description="Significant data breaches or privacy incidents must be reported to affected individuals and the SIC (Superintendencia de Industria y Comercio) within defined timeframes."
+              title="Notificación de Incidentes"
+              description="Brechas de datos significativas o incidentes de privacidad deben ser reportados a individuos afectados y la SIC (Superintendencia de Industria y Comercio) dentro de plazos definidos."
             />
             <ObligationItem
-              title="Data Processing Documentation"
-              description="Organizations must maintain detailed records of data processing activities, including what data is collected, how it is used, and who has access to it."
+              title="Documentación de Procesamiento de Datos"
+              description="Las organizaciones deben mantener registros detallados de actividades de procesamiento de datos, incluyendo qué datos se recopilan, cómo se usan y quién tiene acceso a ellos."
             />
             <ObligationItem
-              title="Third-Party Accountability"
-              description="If using third-party LLM services or data processors, organizations remain liable. Data processing agreements must ensure compliance."
+              title="Responsabilidad de Terceros"
+              description="Si se usan servicios LLM de terceros o procesadores de datos, las organizaciones siguen siendo responsables. Los acuerdos de procesamiento de datos deben garantizar cumplimiento."
             />
           </div>
         </section>

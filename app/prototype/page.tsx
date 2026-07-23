@@ -160,17 +160,9 @@ export default function PrototypePage() {
 
         {/* Risk Assessment Dashboard */}
         <section>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-96 order-2 md:order-1">
-              <Image
-                src="/images/risk-assessment-dashboard.png"
-                alt="Tablero de evaluación de riesgos"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-4 text-secondary">Tablero de Evaluación de Riesgos</h2>
+          <h2 className="text-3xl font-bold mb-4 text-secondary">Tablero de Evaluación de Riesgos</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+            <div>
               <p className="text-lg text-muted-foreground mb-6">
                 Este tablero permite a los equipos de TI y gobernanza de datos evaluar sistemáticamente los riesgos de privacidad asociados con la implementación de LLM.
               </p>
@@ -196,6 +188,14 @@ export default function PrototypePage() {
                   description="Controles y acciones recomendadas para cada riesgo identificado"
                 />
               </div>
+            </div>
+            <div className="relative h-96">
+              <Image
+                src="/images/risk-assessment-dashboard.png"
+                alt="Tablero de evaluación de riesgos"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </section>
@@ -240,17 +240,9 @@ export default function PrototypePage() {
 
         {/* Compliance Mapping */}
         <section>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-96 order-2 md:order-1">
-              <Image
-                src="/images/compliance-mapping.png"
-                alt="Mapeo de cumplimiento"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-4 text-primary">Mapeo de Cumplimiento Regulatorio</h2>
+          <h2 className="text-3xl font-bold mb-4 text-primary">Mapeo de Cumplimiento Regulatorio</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+            <div>
               <p className="text-lg text-muted-foreground mb-6">
                 Alineación sistemática de tu implementación de LLM con todas las regulaciones colombianas e internacionales aplicables.
               </p>
@@ -261,6 +253,14 @@ export default function PrototypePage() {
                 <ComplianceBullet framework="NIST Framework" status="Ciberseguridad" />
                 <ComplianceBullet framework="ISO/IEC 27701" status="Gestión de Privacidad" />
               </div>
+            </div>
+            <div className="relative h-96">
+              <Image
+                src="/images/compliance-mapping.png"
+                alt="Mapeo de cumplimiento"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </section>
