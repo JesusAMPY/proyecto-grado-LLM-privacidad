@@ -22,9 +22,9 @@ export default function PrototypePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
         {/* Framework Overview */}
         <section>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <h2 className="text-3xl font-bold mb-4 text-primary">Descripción General del Marco</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
             <div>
-              <h2 className="text-3xl font-bold mb-4 text-primary">Descripción General del Marco</h2>
               <p className="text-lg text-muted-foreground mb-6">
                 Los cuatro pilares fundamentales del marco de privacidad LLM trabajan juntos para crear un enfoque integral para la adopción segura de LLM en instituciones de educación superior.
               </p>
@@ -100,7 +100,7 @@ export default function PrototypePage() {
 
         {/* Implementation Timeline */}
         <section>
-          <h2 className="text-3xl font-bold mb-2 text-primary">Cronograma de Implementación (6 Meses)</h2>
+          <h2 className="text-3xl font-bold mb-4 text-primary">Cronograma de Implementación (6 Meses)</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
             Plan estructurado para la adopción segura de LLM en tu institución de educación superior.
           </p>
