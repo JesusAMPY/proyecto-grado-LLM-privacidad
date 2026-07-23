@@ -3,228 +3,226 @@ import { Metadata } from 'next'
 import { Mail, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About | LLM Privacy Framework',
-  description: 'Project background and information about this educational resource',
+  title: 'Acerca de | Marco de Privacidad LLM',
+  description: 'Antecedentes del proyecto e información sobre este recurso educativo',
 }
 
 export default function AboutPage() {
   return (
     <>
       <HeroSection
-        title="About This Project"
-        subtitle="An educational resource for privacy-aware LLM adoption in Colombian higher education"
+        title="Acerca de Este Proyecto"
+        subtitle="Un recurso educativo para la adopción consciente de privacidad de LLM en educación superior colombiana"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Project Overview */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
+          <h2 className="text-3xl font-bold mb-6">Descripción General del Proyecto</h2>
 
           <div className="space-y-4 text-muted-foreground">
             <p>
-              This educational framework was developed to address the unique privacy and data protection challenges
-              facing Colombian Higher Education Institutions (HEIs) as they adopt Large Language Models (LLMs). It
-              provides a structured, evidence-based approach to identifying, assessing, and mitigating privacy risks
-              while ensuring compliance with Colombian Law 1581 (Ley 1581 de 2012) and the national AI strategy (CONPES
-              4144).
+              Este marco educativo fue desarrollado para abordar los únicos desafíos de privacidad y protección de datos que enfrenta
+              las Instituciones de Educación Superior (IES) colombianas al adoptar Modelos de Lenguaje Grande (LLMs). Proporciona un enfoque
+              estructurado y basado en evidencia para identificar, evaluar y mitigar riesgos de privacidad mientras se garantiza el cumplimiento
+              con la Ley 1581 colombiana (Ley 1581 de 2012) y la estrategia nacional de IA (CONPES 4144).
             </p>
 
             <p>
-              The framework synthesizes requirements from Colombian regulations, international standards (OWASP, NIST,
-              ISO/IEC 27701), and best practices from academic research. It is designed to be practical, actionable, and
-              tailored to the specific contexts of Colombian educational institutions.
+              El marco sintetiza requisitos de regulaciones colombianas, estándares internacionales (OWASP, NIST,
+              ISO/IEC 27701) y mejores prácticas de investigación académica. Está diseñado para ser práctico, accionable y
+              adaptado a los contextos específicos de las instituciones educativas colombianas.
             </p>
 
             <p>
-              This project resulted from comprehensive research into privacy risks in AI adoption, regulatory analysis,
-              and consultation with stakeholders in Colombian higher education. The framework has been validated through
-              case study development and institutional context analysis.
+              Este proyecto resultó de investigación exhaustiva en riesgos de privacidad en adopción de IA, análisis regulatorio
+              y consulta con partes interesadas en educación superior colombiana. El marco ha sido validado a través del
+              desarrollo de casos de estudio y análisis de contexto institucional.
             </p>
           </div>
         </section>
 
         {/* Why This Matters */}
         <section className="mb-16 bg-secondary/50 p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-6">Why This Matters</h2>
+          <h2 className="text-2xl font-bold mb-6">Por Qué Esto Es Importante</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <ImpactCard
               number="1"
-              title="Regulatory Compliance Imperative"
-              description="Colombian Law 1581 requires organizations to protect personal data. As LLMs proliferate in education, institutions must understand and comply with these requirements to avoid penalties and legal liability."
+              title="Imperativo de Cumplimiento Regulatorio"
+              description="La Ley 1581 colombiana requiere que las organizaciones protejan datos personales. A medida que los LLM se proliferan en educación, las instituciones deben entender y cumplir estos requisitos para evitar sanciones y responsabilidad legal."
             />
             <ImpactCard
               number="2"
-              title="Institutional Risk"
-              description="Privacy breaches involving student records, research data, or employee information can devastate institutional reputation, violate stakeholder trust, and create significant legal exposure."
+              title="Riesgo Institucional"
+              description="Las brechas de privacidad que involucran registros de estudiantes, datos de investigación o información de empleados pueden devastar la reputación institucional, violar la confianza de partes interesadas y crear exposición legal significativa."
             />
             <ImpactCard
               number="3"
-              title="Knowledge Gap"
-              description="Many Colombian HEIs lack guidance on safe LLM adoption. This framework fills that gap by providing evidence-based, standards-aligned recommendations."
+              title="Brecha de Conocimiento"
+              description="Muchas IES colombianas carecen de orientación sobre adopción segura de LLM. Este marco llena esa brecha al proporcionar recomendaciones basadas en evidencia y alineadas con estándares."
             />
             <ImpactCard
               number="4"
-              title="Educational Opportunity"
-              description="LLMs offer tremendous potential for advancing teaching, research, and operations—if implemented responsibly. This framework enables institutions to capture benefits while protecting privacy."
+              title="Oportunidad Educativa"
+              description="Los LLM ofrecen un potencial tremendo para avanzar la enseñanza, investigación y operaciones, si se implementan responsablemente. Este marco permite a las instituciones capturar beneficios mientras protegen la privacidad."
             />
           </div>
         </section>
 
         {/* Key Principles */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Core Principles</h2>
+          <h2 className="text-3xl font-bold mb-8">Principios Fundamentales</h2>
 
           <div className="space-y-4">
             <PrincipleItem
-              title="Privacy by Design"
-              description="Privacy considerations should be incorporated from the earliest stages of LLM planning and implementation, not added as an afterthought."
+              title="Privacidad por Diseño"
+              description="Las consideraciones de privacidad deben incorporarse desde las etapas iniciales de la planificación e implementación de LLM, no agregadas como una consideración posterior."
             />
             <PrincipleItem
-              title="Proportionality"
-              description="The level of privacy protection should be proportionate to the sensitivity of data and the significance of LLM decisions affecting individuals."
+              title="Proporcionalidad"
+              description="El nivel de protección de privacidad debe ser proporcional a la sensibilidad de los datos y la importancia de las decisiones del LLM que afectan a individuos."
             />
             <PrincipleItem
-              title="Data Minimization"
-              description="Provide LLMs only with the minimum data necessary to accomplish institutional goals. When in doubt, use less data."
+              title="Minimización de Datos"
+              description="Proporciona a los LLM solo los datos mínimos necesarios para lograr objetivos institucionales. En caso de duda, usa menos datos."
             />
             <PrincipleItem
-              title="Transparency"
-              description="Clearly communicate with stakeholders about when, how, and why LLMs are used in institutional processes."
+              title="Transparencia"
+              description="Comunica claramente con partes interesadas sobre cuándo, cómo y por qué se usan los LLM en procesos institucionales."
             />
             <PrincipleItem
-              title="Human Oversight"
-              description="LLMs should inform human decision-making, not replace meaningful human judgment, especially for decisions affecting individuals."
+              title="Supervisión Humana"
+              description="Los LLM deben informar la toma de decisiones humana, no reemplazar el criterio humano significativo, especialmente para decisiones que afectan a individuos."
             />
             <PrincipleItem
-              title="Accountability"
-              description="Institutions remain responsible for privacy compliance and the impacts of LLM systems, regardless of external vendors or providers."
+              title="Responsabilidad"
+              description="Las instituciones siguen siendo responsables del cumplimiento de privacidad y los impactos de los sistemas LLM, independientemente de proveedores externos."
             />
           </div>
         </section>
 
         {/* Framework Development */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Framework Development</h2>
+          <h2 className="text-3xl font-bold mb-8">Desarrollo del Marco</h2>
 
           <div className="space-y-6">
             <ProcessPhase
-              phase="Phase 1: Research & Analysis"
-              description="Comprehensive review of privacy threats in LLM systems, analysis of Colombian regulatory landscape (Ley 1581, CONPES 4144), and synthesis of international standards (OWASP, NIST, ISO 27701)."
-              duration="Foundational Research"
+              phase="Fase 1: Investigación y Análisis"
+              description="Revisión exhaustiva de amenazas de privacidad en sistemas LLM, análisis del panorama regulatorio colombiano (Ley 1581, CONPES 4144) y síntesis de estándares internacionales (OWASP, NIST, ISO 27701)."
+              duration="Investigación Fundamental"
             />
 
             <ProcessPhase
-              phase="Phase 2: Risk Identification"
-              description="Systematic identification and categorization of privacy risks specific to LLM adoption in Colombian HEIs. Risks organized by category (data leakage, model behavior, system access, regulatory) and severity."
-              duration="Risk Assessment"
+              phase="Fase 2: Identificación de Riesgos"
+              description="Identificación y categorización sistemática de riesgos de privacidad específicos para adopción de LLM en IES colombianas. Riesgos organizados por categoría (fuga de datos, comportamiento del modelo, acceso al sistema, regulatorio) y severidad."
+              duration="Evaluación de Riesgos"
             />
 
             <ProcessPhase
-              phase="Phase 3: Standards Mapping"
-              description="Detailed mapping between identified risks and applicable regulatory and compliance standards to show how mitigation strategies align with Colombian law and international best practices."
-              duration="Compliance Analysis"
+              phase="Fase 3: Mapeo de Estándares"
+              description="Mapeo detallado entre riesgos identificados y estándares regulatorios y de cumplimiento aplicables para mostrar cómo las estrategias de mitigación se alinean con la ley colombiana y mejores prácticas internacionales."
+              duration="Análisis de Cumplimiento"
             />
 
             <ProcessPhase
-              phase="Phase 4: Scenario Development"
-              description="Creation of realistic case studies showing how Colombian HEIs can implement LLMs across various institutional functions (academic advising, research, HR, security) while protecting privacy."
-              duration="Contextual Application"
+              phase="Fase 4: Desarrollo de Escenarios"
+              description="Creación de casos de estudio realistas mostrando cómo las IES colombianas pueden implementar LLM en varias funciones institucionales (asesoramiento académico, investigación, RRHH, seguridad) mientras protegen la privacidad."
+              duration="Aplicación Contextual"
             />
 
             <ProcessPhase
-              phase="Phase 5: Framework Validation"
-              description="Testing and refinement of the framework through consultation with IT security professionals, data protection officers, legal experts, and institutional leaders in Colombian higher education."
-              duration="Stakeholder Consultation"
+              phase="Fase 5: Validación del Marco"
+              description="Prueba y refinamiento del marco a través de consulta con profesionales de seguridad de TI, oficiales de protección de datos, expertos legales y líderes institucionales en educación superior colombiana."
+              duration="Consulta de Partes Interesadas"
             />
           </div>
         </section>
 
         {/* Resources & Support */}
         <section className="bg-card border-2 border-primary p-8 rounded-lg mb-16">
-          <h2 className="text-2xl font-bold mb-6">Using This Framework</h2>
+          <h2 className="text-2xl font-bold mb-6">Usando Este Marco</h2>
 
           <div className="space-y-4 text-muted-foreground">
             <p>
-              <strong>For IT Security & Data Protection Teams:</strong> Use the framework to conduct privacy impact
-              assessments, identify risks in your institution&apos;s LLM implementations, and develop mitigation
-              strategies aligned with Ley 1581.
+              <strong>Para Equipos de Seguridad de TI y Protección de Datos:</strong> Usa el marco para conducir evaluaciones de impacto de privacidad,
+              identifica riesgos en las implementaciones de LLM de tu institución y desarrolla estrategias de mitigación alineadas con Ley 1581.
             </p>
 
             <p>
-              <strong>For Academic Leaders & Department Heads:</strong> Review the scenarios and case studies to
-              understand privacy considerations relevant to your specific use cases. Work with IT security teams to
-              implement recommended controls.
+              <strong>Para Líderes Académicos y Directores de Departamento:</strong> Revisa los escenarios y casos de estudio para
+              entender las consideraciones de privacidad relevantes para tus casos de uso específicos. Trabaja con equipos de seguridad de TI para
+              implementar controles recomendados.
             </p>
 
             <p>
-              <strong>For Researchers & Academics:</strong> Use this resource to understand privacy implications of
-              LLMs for research data and student information. Incorporate privacy considerations into research
-              methodologies and consent processes.
+              <strong>Para Investigadores y Académicos:</strong> Usa este recurso para entender las implicaciones de privacidad de
+              LLM para datos de investigación e información de estudiantes. Incorpora consideraciones de privacidad en metodologías de investigación
+              y procesos de consentimiento.
             </p>
 
             <p>
-              <strong>For Policy Makers & Institutional Governance:</strong> Use the compliance guidance to ensure your
-              institution&apos;s LLM policies align with Colombian regulations and best practices. Establish governance
-              frameworks for LLM adoption decisions.
+              <strong>Para Formuladores de Políticas y Gobernanza Institucional:</strong> Usa la orientación de cumplimiento para asegurar que
+              las políticas de LLM de tu institución se alineen con regulaciones colombianas y mejores prácticas. Establece marcos de gobernanza
+              para decisiones de adopción de LLM.
             </p>
           </div>
         </section>
 
         {/* Contact & Feedback */}
         <section>
-          <h2 className="text-3xl font-bold mb-8">Contact & Feedback</h2>
+          <h2 className="text-3xl font-bold mb-8">Contacto y Retroalimentación</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-6 rounded-lg border border-border bg-card">
               <div className="flex items-center gap-2 mb-4">
                 <Mail className="w-5 h-5 text-primary" />
-                <h3 className="font-bold text-foreground">Email Inquiries</h3>
+                <h3 className="font-bold text-foreground">Consultas por Correo</h3>
               </div>
               <p className="text-muted-foreground text-sm mb-4">
-                Have questions about the framework or need clarification on specific topics?
+                ¿Tienes preguntas sobre el marco o necesitas aclaración sobre temas específicos?
               </p>
               <a href="mailto:info@llmprivacyframework.edu.co" className="text-primary font-medium text-sm hover:underline">
-                Send us an email
+                Envíanos un correo
               </a>
             </div>
 
             <div className="p-6 rounded-lg border border-border bg-card">
               <div className="flex items-center gap-2 mb-4">
                 <MapPin className="w-5 h-5 text-primary" />
-                <h3 className="font-bold text-foreground">Location</h3>
+                <h3 className="font-bold text-foreground">Ubicación</h3>
               </div>
               <p className="text-muted-foreground text-sm">
-                This framework was developed with input from Colombian Higher Education Institutions and is tailored
-                specifically for the Colombian regulatory and institutional context.
+                Este marco fue desarrollado con aporte de Instituciones de Educación Superior colombianas y está adaptado
+                específicamente para el contexto regulatorio e institucional colombiano.
               </p>
             </div>
           </div>
 
           <div className="mt-8 p-6 rounded-lg bg-secondary/50 border border-border">
-            <h3 className="font-bold text-foreground mb-3">Share Your Experience</h3>
+            <h3 className="font-bold text-foreground mb-3">Comparte Tu Experiencia</h3>
             <p className="text-muted-foreground text-sm mb-4">
-              If you&apos;ve implemented this framework in your institution, we&apos;d love to hear about your
-              experience! Your feedback helps us continuously improve and refine this resource.
+              Si has implementado este marco en tu institución, ¡nos encantaría escuchar sobre tu
+              experiencia! Tu retroalimentación nos ayuda a mejorar y refinar continuamente este recurso.
             </p>
             <button className="text-primary font-medium text-sm hover:underline">
-              Share Your Institution&apos;s Experience
+              Comparte la Experiencia de Tu Institución
             </button>
           </div>
         </section>
 
         {/* Disclaimer */}
         <section className="mt-16 pt-16 border-t border-border">
-          <h2 className="text-2xl font-bold mb-6">Disclaimer</h2>
+          <h2 className="text-2xl font-bold mb-6">Descargo de Responsabilidad</h2>
 
           <div className="p-6 rounded-lg bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800">
             <p className="text-sm text-yellow-900 dark:text-yellow-100">
-              This framework is provided for educational purposes to support Colombian Higher Education Institutions in
-              understanding privacy considerations for LLM adoption. It is not a substitute for legal advice or a
-              guarantee of compliance. Institutions should consult with their legal counsel, IT security professionals,
-              and data protection officers when implementing LLM systems. While based on current regulations and best
-              practices, this framework may not reflect all future regulatory changes or evolving security best
-              practices. Regular updates and reviews of this resource are recommended.
+              Este marco se proporciona con fines educativos para apoyar a las Instituciones de Educación Superior colombianas en
+              entender las consideraciones de privacidad para la adopción de LLM. No es un sustituto del asesoramiento legal ni una
+              garantía de cumplimiento. Las instituciones deben consultar con su asesor legal, profesionales de seguridad de TI
+              y oficiales de protección de datos al implementar sistemas LLM. Aunque se basa en regulaciones actuales y mejores
+              prácticas, este marco puede no reflejar todos los cambios regulatorios futuros o mejores prácticas de seguridad en evolución.
+              Se recomienda la actualización y revisión regular de este recurso.
             </p>
           </div>
         </section>

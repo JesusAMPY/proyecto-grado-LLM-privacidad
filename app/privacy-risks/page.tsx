@@ -5,17 +5,17 @@ import { HeroSection } from '@/components/HeroSection'
 import PrivacyRisksContent from './content'
 
 export const metadata: Metadata = {
-  title: 'Privacy Risks | LLM Privacy Framework',
-  description: 'Comprehensive catalog of privacy risks specific to LLM adoption in higher education',
+  title: 'Riesgos de Privacidad | Marco de Privacidad LLM',
+  description: 'Catálogo integral de riesgos de privacidad específicos para la adopción de LLM en educación superior',
 }
 
 export default function PrivacyRisksPage() {
   return (
     <>
       <HeroSection
-        title="Privacy Risks in LLM Adoption"
-        subtitle="Comprehensive catalog of privacy threats specific to Large Language Models in higher education"
-        description="Understanding these risks is the first step toward implementing appropriate protections. Each risk includes examples, impact assessment, and mitigation strategies."
+        title="Riesgos de Privacidad en la Adopción de LLM"
+        subtitle="Catálogo integral de amenazas de privacidad específicas para Modelos de Lenguaje Grande en educación superior"
+        description="Entender estos riesgos es el primer paso hacia la implementación de protecciones apropiadas. Cada riesgo incluye ejemplos, evaluación de impacto y estrategias de mitigación."
       />
       <PrivacyRisksContent />
 

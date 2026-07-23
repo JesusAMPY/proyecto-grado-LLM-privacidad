@@ -23,28 +23,28 @@ export default function PrivacyRisksContent() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Risk Overview */}
       <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8">Risk Overview</h2>
+        <h2 className="text-3xl font-bold mb-8">Descripción General de Riesgos</h2>
 
         <div className="grid md:grid-cols-4 gap-4 mb-12">
-          <SeverityCard label="Critical" count={severityCounts.critical} color="bg-red-100 text-red-800 dark:bg-red-900" />
-          <SeverityCard label="High" count={severityCounts.high} color="bg-orange-100 text-orange-800 dark:bg-orange-900" />
-          <SeverityCard label="Medium" count={severityCounts.medium} color="bg-yellow-100 text-yellow-800 dark:bg-yellow-900" />
-          <SeverityCard label="Low" count={severityCounts.low} color="bg-blue-100 text-blue-800 dark:bg-blue-900" />
+          <SeverityCard label="Crítico" count={severityCounts.critical} color="bg-red-100 text-red-800 dark:bg-red-900" />
+          <SeverityCard label="Alto" count={severityCounts.high} color="bg-orange-100 text-orange-800 dark:bg-orange-900" />
+          <SeverityCard label="Medio" count={severityCounts.medium} color="bg-yellow-100 text-yellow-800 dark:bg-yellow-900" />
+          <SeverityCard label="Bajo" count={severityCounts.low} color="bg-blue-100 text-blue-800 dark:bg-blue-900" />
         </div>
 
         <div className="p-6 rounded-lg bg-secondary/50 border border-border">
-          <h3 className="font-semibold mb-3">Total Identified Risks</h3>
+          <h3 className="font-semibold mb-3">Total de Riesgos Identificados</h3>
           <p className="text-muted-foreground">
-            {privacyRisks.length} privacy risks have been identified across 4 categories. Each risk includes specific
-            examples, potential impacts, and recommended mitigation strategies. Use the filters below to explore risks by
-            category or severity.
+            Se han identificado {privacyRisks.length} riesgos de privacidad en 4 categorías. Cada riesgo incluye ejemplos específicos,
+            impactos potenciales y estrategias de mitigación recomendadas. Usa los filtros abajo para explorar riesgos por
+            categoría o severidad.
           </p>
         </div>
       </section>
 
       {/* Category Filter */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-6">Filter by Category</h2>
+        <h2 className="text-2xl font-bold mb-6">Filtrar por Categoría</h2>
 
         <div className="flex flex-wrap gap-3 mb-8">
           <button
@@ -55,7 +55,7 @@ export default function PrivacyRisksContent() {
                 : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
             }`}
           >
-            All Categories ({privacyRisks.length})
+            Todas las Categorías ({privacyRisks.length})
           </button>
 
           {riskCategories.map((category) => {
@@ -88,7 +88,7 @@ export default function PrivacyRisksContent() {
       {/* Risk Cards */}
       <section>
         <h2 className="text-2xl font-bold mb-8">
-          {selectedCategory === 'all' ? 'All Privacy Risks' : riskCategories.find((c) => c.id === selectedCategory)?.label}
+          {selectedCategory === 'all' ? 'Todos los Riesgos de Privacidad' : riskCategories.find((c) => c.id === selectedCategory)?.label}
         </h2>
 
         <div className="space-y-6">

@@ -16,48 +16,48 @@ export default function ResourcesPage() {
   return (
     <>
       <HeroSection
-        title="Resources & References"
-        subtitle="Tools, templates, and external references for safe LLM adoption"
-        description="A curated collection of resources to help Colombian HEIs implement the framework and stay current with evolving privacy and security best practices."
+        title="Recursos y Referencias"
+        subtitle="Herramientas, plantillas y referencias externas para adopción segura de LLM"
+        description="Colección curada de recursos para ayudar a las IES colombianas a implementar el marco y mantenerse actualizado con mejores prácticas de privacidad y seguridad en evolución."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Primary Resources */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Key Resources</h2>
+          <h2 className="text-3xl font-bold mb-8">Recursos Clave</h2>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <ResourceTypeCard
               icon={<FileText className="w-8 h-8" />}
-              title="Colombian Laws & Policies"
+              title="Leyes y Políticas Colombianas"
               count={documentResources.length}
-              description="National regulations and strategic documents"
+              description="Regulaciones nacionales y documentos estratégicos"
             />
             <ResourceTypeCard
               icon={<ExternalLink className="w-8 h-8" />}
-              title="International Standards"
+              title="Estándares Internacionales"
               count={externalResources.length}
-              description="Global best practices and frameworks"
+              description="Mejores prácticas globales y marcos de referencia"
             />
             <ResourceTypeCard
               icon={<Wrench className="w-8 h-8" />}
-              title="Tools & Templates"
+              title="Herramientas y Plantillas"
               count={toolResources.length}
-              description="Practical implementation resources"
+              description="Recursos de implementación práctica"
             />
           </div>
         </section>
 
         {/* Resource Lists */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-8">Reference Materials</h2>
+          <h2 className="text-2xl font-bold mb-8">Materiales de Referencia</h2>
 
           <div className="space-y-12">
             {/* Documents */}
             {documentResources.length > 0 && (
               <div>
                 <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-                  <FileText className="w-6 h-6" /> Colombian Law & Policy
+                  <FileText className="w-6 h-6" /> Ley y Política Colombiana
                 </h3>
                 <div className="space-y-4">
                   {documentResources.map((resource, idx) => (
@@ -71,7 +71,7 @@ export default function ResourcesPage() {
             {externalResources.length > 0 && (
               <div>
                 <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-                  <ExternalLink className="w-6 h-6" /> International Standards & Frameworks
+                  <ExternalLink className="w-6 h-6" /> Estándares e Marcos Internacionales
                 </h3>
                 <div className="space-y-4">
                   {externalResources.map((resource, idx) => (
@@ -85,7 +85,7 @@ export default function ResourcesPage() {
             {toolResources.length > 0 && (
               <div>
                 <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-                  <Wrench className="w-6 h-6" /> Tools & Templates
+                  <Wrench className="w-6 h-6" /> Herramientas y Plantillas
                 </h3>
                 <div className="space-y-4">
                   {toolResources.map((resource, idx) => (
@@ -99,7 +99,7 @@ export default function ResourcesPage() {
 
         {/* Recommended Reading */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Recommended Reading</h2>
+          <h2 className="text-3xl font-bold mb-8">Lectura Recomendada</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <ReadingItem
@@ -137,7 +137,7 @@ export default function ResourcesPage() {
 
         {/* Implementation Guides */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Step-by-Step Implementation Guides</h2>
+          <h2 className="text-3xl font-bold mb-8">Guías de Implementación Paso a Paso</h2>
 
           <div className="space-y-6">
             <GuideCard
