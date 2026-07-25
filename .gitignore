@@ -1,15 +1,70 @@
-# v0 sandbox internal files
-__v0_runtime_loader.js
-__v0_devtools.tsx
-__v0_jsx-dev-runtime.ts
-.snowflake/
-.v0-trash/
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js build output
+.next/
+out/
+
+# Production build
+build/
+dist/
+
+# Environment variables (NUNCA subir al repositorio)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
 .vercel/
 
-# Environment variables
-.env*.local
-
-# Common ignores
-node_modules
-.next/
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverrideBuild
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs y editores
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Python (para los scripts de auditoría)
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+venv/
+env/
+.env/
+.venv/
+pip-log.txt
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+
+# Datos sensibles (NUNCA subir datos reales de IES)
+/scripts/data/real/
+/instruments/respuestas_reales/
+*.csv.real
