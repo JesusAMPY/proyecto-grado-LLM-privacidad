@@ -16,11 +16,21 @@ Proporcionar a las IES colombianas un recurso educativo y práctico para:
 
 ## 👥 Autores
 
-- **Antonio Amp** - Investigador Principal
-- **Equipo de Investigación en Privacidad de Datos** - Grupo de Investigación en Seguridad Informática y Privacidad
+### Jesús Antonio Acevedo Montoya
+Líder del desarrollo del prototipo, implementación de la aplicación web, integración técnica y despliegue del proyecto.  
+📧 Email: antonio.amp@universitario.edu.co  
+🔗 GitHub: @JesusAMPY
+
+### Daniel Felipe Villa Duarte
+Coordinación del proyecto, planificación metodológica, seguimiento del desarrollo y consolidación de la investigación.  
+📧 Email: dfvillad@unadvirtual.edu.co
+
+### Juan Pablo Londoño Corrales
+Investigación documental, elaboración del documento maestro, análisis metodológico y apoyo en la definición de requerimientos y validación del framework.  
+📧 Email: jplondonoco@unadvirtual.edu.co
 
 **Institución:** Programa de Grado - Ingeniería de Sistemas  
-**Universidad Colaboradora:** Instituciones de Educación Superior Colombianas
+**Universidad:** Universidad Nacional Abierta y a Distancia (UNAD)
 
 ---
 

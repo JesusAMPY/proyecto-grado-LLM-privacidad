@@ -28,19 +28,40 @@ export default function MoreInfoPage() {
                 <p className="text-lg text-muted-foreground mb-4">
                   Investigación completa del proyecto de grado: "Sistema de evaluación de riesgos de privacidad y fuga de datos en el uso de modelos de lenguaje de gran escala (LLM) en instituciones de educación superior en Medellín, Colombia"
                 </p>
-                <div className="space-y-2 mb-6">
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Autores:</strong> Jesús Antonio Acevedo Montoya, Daniel Felipe Villa Duarte, Juan Pablo Londoño Corrales
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Tutor:</strong> Daniel Andrés Guzmán Arevalo
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Institución:</strong> Programa de Ingeniería de Sistemas - Universidad Nacional Abierta y a Distancia (UNAD)
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Fecha:</strong> 12 de julio de 2026
-                  </p>
+                <div className="space-y-3 mb-6">
+                  <div className="bg-background/50 rounded p-3 space-y-2">
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">Jesús Antonio Acevedo Montoya</strong>  
+                      <br/>Líder del desarrollo del prototipo, implementación de la aplicación web, integración técnica y despliegue del proyecto.  
+                      <br/>📧 <a href="mailto:antonio.amp@universitario.edu.co" className="text-primary hover:underline">antonio.amp@universitario.edu.co</a>  
+                      <br/>🔗 <a href="https://github.com/JesusAMPY" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@JesusAMPY</a>
+                    </p>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded p-3 space-y-2">
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">Daniel Felipe Villa Duarte</strong>  
+                      <br/>Coordinación del proyecto, planificación metodológica, seguimiento del desarrollo y consolidación de la investigación.  
+                      <br/>📧 <a href="mailto:dfvillad@unadvirtual.edu.co" className="text-primary hover:underline">dfvillad@unadvirtual.edu.co</a>
+                    </p>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded p-3 space-y-2">
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">Juan Pablo Londoño Corrales</strong>  
+                      <br/>Investigación documental, elaboración del documento maestro, análisis metodológico y apoyo en la definición de requerimientos y validación del framework.  
+                      <br/>📧 <a href="mailto:jplondonoco@unadvirtual.edu.co" className="text-primary hover:underline">jplondonoco@unadvirtual.edu.co</a>
+                    </p>
+                  </div>
+
+                  <div className="border-t border-border pt-3 mt-3">
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">Institución:</strong> Programa de Ingeniería de Sistemas - Universidad Nacional Abierta y a Distancia (UNAD)
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">Fecha:</strong> 12 de julio de 2026
+                    </p>
+                  </div>
                 </div>
                 <a
                   href="/documentos/Documento-Maestro.pdf"
