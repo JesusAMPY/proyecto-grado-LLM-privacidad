@@ -16,9 +16,9 @@ Proporcionar a las IES colombianas un recurso educativo y práctico para:
 
 ## 👥 Autores
 
-### Jesús Antonio Acevedo Montoya
+### Jesus Antonio Acevedo Montoya
 Líder del desarrollo del prototipo, implementación de la aplicación web, integración técnica y despliegue del proyecto.  
-📧 Email: antonio.amp@universitario.edu.co  
+📧 Email: jaacevedom@unadvirtual.edu.co  
 🔗 GitHub: @JesusAMPY
 
 ### Daniel Felipe Villa Duarte

@@ -31,9 +31,9 @@ export default function MoreInfoPage() {
                 <div className="space-y-3 mb-6">
                   <div className="bg-background/50 rounded p-3 space-y-2">
                     <p className="text-sm text-muted-foreground">
-                      <strong className="text-foreground">Jesús Antonio Acevedo Montoya</strong>  
+                      <strong className="text-foreground">Jesus Antonio Acevedo Montoya</strong>  
                       <br/>Líder del desarrollo del prototipo, implementación de la aplicación web, integración técnica y despliegue del proyecto.  
-                      <br/>📧 <a href="mailto:antonio.amp@universitario.edu.co" className="text-primary hover:underline">antonio.amp@universitario.edu.co</a>  
+                      <br/>📧 <a href="mailto:jaacevedom@unadvirtual.edu.co" className="text-primary hover:underline">jaacevedom@unadvirtual.edu.co</a>  
                       <br/>🔗 <a href="https://github.com/JesusAMPY" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@JesusAMPY</a>
                     </p>
                   </div>
