@@ -1,0 +1,943 @@
+
+
+ 
+ 
+Sistema de evaluación de riesgos de privacidad y fuga de datos en el uso de modelos de 
+lenguaje de gran escala (LLM) en instituciones de educación superior en Medellín, 
+Colombia 
+ 
+ 
+ 
+Jesus Antonio Acevedo Montoya 
+Daniel Felipe Villa Duarte 
+Juan Pablo Londoño Corrales 
+ 
+202016907 - Proyecto de grado 
+Tutor: Daniel Andrés Guzmán Arevalo 
+ 
+ 
+ 
+ 
+ 
+Programa de Ingeniería de Sistemas 
+Escuela de Ciencias Básicas Tecnología e Ingeniería 
+ Universidad Nacional Abierta y a Distancia 
+12 de julio de 2026 
+
+ 
+ii 
+Tabla de Contenidos 
+ 
+Introducción .................................................................................................................................... 5 
+Líneas y grupos de interés investigativo ..................................................................................... 9 
+Planteamiento del problema ........................................................................................................ 9 
+Pregunta de investigación ..................................................................................................... 11 
+Árbol causa – efecto del problema ....................................... ¡Error! Marcador no definido. 
+Justificación .............................................................................................................................. 13 
+Objetivos ................................................................................................................................... 16 
+Objetivo general .................................................................................................................... 16 
+Objetivos específicos ............................................................................................................ 16 
+Marco referencial ...................................................................................................................... 19 
+Marco conceptual: ................................................................................................................. 21 
+Marco Legal: ......................................................................................................................... 23 
+Marco Tecnológico: .............................................................................................................. 24 
+Metodología .............................................................................................................................. 24 
+Metodología de desarrollo de software  de acuerdo  a la que seleccionaron para el proyecto. 27 
+Diseño de la solución ................................................................................................................ 29 
+Cronograma de actividades ....................................................................................................... 30 
+Recursos necesarios para la implementación ............................................................................ 30 
+Conclusiones ................................................................................................................................. 32 
+Referencias .................................................................................................................................... 35 
+
+ 
+iii 
+Lista de tablas 
+ 
+Tabla 1. Relación de intereses investigativos, líneas y grupos de investigación. ........................... 9 
+Tabla 2. Marco legal ..................................................................................................................... 23 
+Tabla 3. Requerimientos funcionales ............................................................................................ 28 
+Tabla 4. Requerimientos no funcionales ....................................................................................... 28 
+Tabla 5. Cronograma de actividades ............................................................................................. 30 
+Tabla 6. Recursos necesarios ........................................................................................................ 30 
+
+ 
+iv 
+Lista de figuras 
+ 
+Figura  1 Árbol de problema ......................................................................................................... 12 
+
+ 
+5 
+Resumen 
+La adopción masiva de Modelos de Lenguaje de Gran Escala (LLM) en 
+instituciones de educación superior (IES) de Medellín ha generado una brecha crítica de 
+gobernanza de datos: estas herramientas se integran en procesos académicos y 
+administrativos sin que existan marcos institucionales de evaluación de riesgos de 
+privacidad alineados con la Ley 1581 de 2012. El presente proyecto aplicado tiene como 
+objetivo diseñar un framework de evaluación de riesgos de privacidad y fuga de datos, 
+sustentado en metodologías de auditoría de privacidad (privacy auditing) y en la 
+parametrización de matrices de severidad, que garantice la adopción segura y ética de los 
+LLM en las IES colombianas. La investigación adopta un enfoque mixto de tipo 
+secuencial explicativo: la fase cuantitativa medirá el nivel de exposición de datos 
+mediante encuestas estructuradas aplicadas en al menos tres IES, mientras que la fase 
+cualitativa profundizará en las brechas de gobernanza a través de entrevistas 
+semiestructuradas a directivos TIC y oficiales de protección de datos. El desarrollo 
+tecnológico seguirá la metodología ágil Scrum, organizado en cuatro sprints, y culminará 
+en un prototipo funcional con nivel de madurez tecnológica TRL5 desplegado en entorno 
+de pruebas. Los resultados esperados incluyen un framework validado por expertos, una 
+matriz cuantificada de riesgos de privacidad para LLM en contextos educativos y guías 
+de buenas prácticas alineadas con el NIST AI RMF 1.0 y el CONPES 4144. 
+ 
+Palabras clave: modelos de lenguaje de gran escala, privacidad de datos, auditoría 
+de privacidad, instituciones de educación superior, gobernanza de inteligencia artificial. 
+
+ 
+6 
+Abstract 
+The massive adoption of Large Language Models (LLM) in higher education 
+institutions (HEI) in Medellín has created a critical data governance gap: these tools are 
+being integrated into academic and administrative processes without institutional privacy 
+risk assessment frameworks aligned with Colombian Law 1581 of 2012. This applied 
+project aims to design a privacy and data leakage risk evaluation framework, supported 
+by privacy auditing methodologies and severity matrix parameterization, to ensure the 
+safe and ethical adoption of LLMs in Colombian HEIs. The research employs a mixed-
+methods approach with a sequential explanatory design: the quantitative phase will 
+measure data exposure levels through structured surveys applied in at least three 
+institutions, while the qualitative phase will deepen governance gap analysis through 
+semi-structured interviews with IT directors and data protection officers. Technological 
+development will follow the Scrum agile methodology, organized into four sprints, and 
+will culminate in a functional prototype at TRL5 maturity level deployed in a testing 
+environment. Expected outcomes include an expert-validated framework, a quantified 
+privacy risk matrix for LLMs in educational contexts, and best-practice guidelines 
+aligned with the NIST AI RMF 1.0 and CONPES 4144. 
+ 
+Keywords: large language models, data privacy, privacy auditing, higher 
+education institutions, artificial intelligence governance. 
+ 
+
+ 
+7 
+Introducción 
+ 
+A nivel global, la adopción de Modelos de Lenguaje de Gran Escala (LLM), como 
+ChatGPT, Gemini y Claude, ha transformado de manera acelerada los ecosistemas 
+educativos universitarios. En el contexto colombiano, y particularmente en Medellín, este 
+fenómeno ha cobrado una relevancia especial: la ciudad concentra más de 25 
+instituciones de educación superior (IES) activas, muchas de las cuales se encuentran en 
+plena transición hacia modelos de gestión académica y administrativa mediados por 
+inteligencia artificial generativa (Hossein-Mohand et al., 2025). Datos recientes del 
+Ministerio de Educación Nacional evidencian que el 58% del estudiantado colombiano no 
+se siente institucionalmente preparado para interactuar con entornos de IA, mientras que 
+únicamente el 22% del profesorado posee competencias digitales avanzadas para su uso 
+responsable (Ministerio de Educación Nacional, 2025). Estas cifras revelan una tensión 
+estructural: la adopción tecnológica avanza a una velocidad que supera la capacidad 
+institucional de gestión de riesgos. 
+En términos de ciberseguridad, los LLM plantean vectores de amenaza 
+específicos que la ingeniería de sistemas está llamada a diagnosticar y contener. La 
+organización OWASP (2025) identificó que las vulnerabilidades más críticas en el 
+despliegue de LLMs incluyen la inyección de prompts, el manejo inadecuado de salidas y 
+la divulgación accidental de información confidencial a través de la memorización de 
+datos de entrenamiento. Estas características técnicas adquieren una gravedad jurídica 
+particular en Colombia, donde la Ley 1581 de 2012 y el Decreto 1377 de 2013 imponen 
+
+ 
+8 
+obligaciones explícitas de protección de datos personales sobre cualquier organización 
+que los trate, incluyendo a las IES. 
+Este documento presenta el avance de la formulación del proyecto aplicado 
+orientado a diseñar un instrumento de diagnóstico de riesgos de privacidad en el uso de 
+LLMs dentro de las IES de Medellín. El texto se organiza en los siguientes apartados: 
+líneas de investigación vinculadas, planteamiento del problema y árbol causal, 
+justificación, objetivos, antecedentes, delimitación, marco referencial, metodología, 
+cronograma, recursos y resultados esperados. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+9 
+Líneas y grupos de interés investigativo 
+Tabla 1. Relación de intereses investigativos, líneas y grupos de investigación. 
+Intereses en ingeniería e 
+investigación 
+Línea de investigación y 
+áreas temáticas 
+Grupo de investigación 
+Evaluación de riesgos de 
+ciberseguridad, auditoría de 
+privacidad (privacy 
+auditing) y modelamiento 
+de vectores de fuga de datos 
+en sistemas basados en 
+Inteligencia Artificial 
+Generativa. 
+Seguridad Informática / 
+Infraestructuras digitales y 
+sistemas inteligentes. 
+ 
+Semillero de Investigación 
+SIIATE (Escuela de 
+Ciencias Básicas, 
+Tecnología e Ingeniería - 
+ECBTI). 
+ 
+La selección de esta línea responde a la naturaleza técnico-regulatoria del objeto de 
+estudio: la evaluación de riesgos de privacidad en sistemas de inteligencia artificial 
+generativa requiere tanto competencias de ingeniería de software y ciberseguridad como 
+conocimiento del marco normativo de protección de datos personales en Colombia. 
+ 
+Planteamiento del problema  
+ La adopción masiva de modelos de lenguaje de gran escala (LLM) en IES ha 
+abierto una brecha de gobernanza de datos sin precedentes. Según el AI Risk 
+Management Framework del National Institute of Standards and Technology, los 
+
+ 
+10 
+sistemas de inteligencia artificial procesan datos en flujos que pueden volverse opacos 
+para los usuarios, incrementando la probabilidad de exposición no autorizada de 
+información sensible (Tabassi, 2023). OWASP identificó en su Top 10 para LLMs 2025 
+que la inyección de prompts, la divulgación de información confidencial y el 
+envenenamiento de datos constituyen las vulnerabilidades más críticas en contextos de 
+despliegue real (OWASP Foundation, 2025). A nivel internacional, múltiples 
+investigaciones documentan que las instituciones educativas son objetivos prioritarios de 
+brechas de seguridad porque administran grandes volúmenes de datos personales sin 
+protocolos de privacidad robustos (Wada et al., 2025). En el contexto latinoamericano, 
+estudios recientes evidencian que la adopción de IA generativa en educación superior ha 
+crecido de forma acelerada con marcadas brechas institucionales de gobernanza (Mora 
+Torres, 2026; Vasquez Blanco, 2026). 
+En Colombia, la Ley 1581 de 2012 y el Decreto Reglamentario 1377 de 2013 
+imponen obligaciones específicas sobre el tratamiento de datos de menores y personas en 
+condición de vulnerabilidad (Congreso de la República de Colombia, 2012; Presidencia 
+de la República de Colombia, 2013). El Ministerio de Educación Nacional reconoció en 
+2025 que persisten brechas significativas: solo el 22% del profesorado utiliza 
+herramientas de IA y el 58% del estudiantado no se siente preparado para un entorno 
+mediado por inteligencia artificial, evidenciando una adopción que supera la capacidad 
+institucional de gestión de riesgos (Hossein-Mohand et al., 2025). En Medellín, ciudad 
+con alta concentración de IES públicas y privadas, la integración de LLMs en procesos 
+administrativos —admisiones, soporte estudiantil, gestión documental— avanza sin que 
+
+ 
+11 
+existan protocolos formalizados de evaluación de riesgos de privacidad, configurando un 
+escenario de exposición sistemática de datos personales (Hossein-Mohand et al., 2025). 
+El proyecto de ley radicado ante el Congreso colombiano clasifica los sistemas de IA en 
+educación como de alto riesgo, reforzando la urgencia de intervenir desde la 
+investigación aplicada (Congreso de la República de Colombia, 2025). 
+El problema central identificado es la ausencia de gobernanza de datos y 
+evaluación de riesgos de privacidad en la integración de LLMs en los procesos 
+administrativos de las IES de Medellín. La causa principal reside en la adopción 
+acelerada de tecnologías de IA sin marcos previos de gestión de riesgos ni protocolos de 
+privacidad desde el diseño, lo que OWASP denomina 'manejo inadecuado de salidas' y 
+'agencia excesiva' del sistema (OWASP Foundation, 2025). Si este problema no se 
+resuelve, las IES quedarán expuestas a sanciones de la Superintendencia de Industria y 
+Comercio bajo la Ley 1581 de 2012, a la exposición de datos de menores de edad y a la 
+pérdida de confianza institucional. 
+ 
+Pregunta de investigación 
+¿Cuáles son los riesgos de privacidad y fuga de datos asociados al uso de modelos 
+de lenguaje de gran escala (LLM) en instituciones de educación superior de Medellín, 
+Colombia, y qué mecanismos de evaluación y mitigación resultan adecuados para el 
+contexto normativo colombiano? 
+
+ 
+12 
+ 
+ 
+Árbol causa – efecto del problema 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figura  1 Árbol de problema 
+
+ 
+13 
+La siguiente descripción textual complementa la figura para efectos de accesibilidad y 
+evaluación: 
+Problema central: Ausencia de gobernanza de datos y evaluación de riesgos de 
+privacidad en la integración de LLMs en los procesos administrativos de las IES de 
+Medellín. 
+ 
+Causas principales: 
+• C1 – Desconocimiento institucional sobre riesgos de privacidad en LLMs: 
+falta de capacitación, ausencia de roles DPO, brecha de competencias digitales (solo 
+el 22% del profesorado utiliza IA – MEN, 2025). 
+• C2 – Ausencia de marcos institucionales de gobernanza de IA: 
+inexistencia de políticas de uso, contratos con proveedores sin cláusulas de 
+tratamiento de datos, carencia de comités de ética. 
+• C3 – Adopción tecnológica acelerada sin evaluación previa de riesgos: 
+presión competitiva, bajo presupuesto para ciberseguridad, dependencia de 
+proveedores internacionales con políticas de retención opacas. 
+• C4 – Vulnerabilidades técnicas estructurales de los LLMs (subcausas): 
+memorización de datos de entrenamiento (Carlini et al., 2021), inyección de prompts 
+y manejo inadecuado de salidas (OWASP, 2025). 
+ 
+ 
+ 
+
+ 
+14 
+Efectos: 
+• E1 – Exposición no autorizada de datos personales de estudiantes, 
+docentes y menores de edad. 
+• E2 – Sanciones legales de la SIC bajo la Ley 1581 de 2012 (multas hasta 
+2.000 SMMLV). 
+• E3 – Pérdida de confianza institucional y daño reputacional para las IES. 
+• E4 – Afectación financiera por litigios, procesos de cumplimiento forzado 
+y costos de remediación. 
+• E5 – Deterioro de la calidad de decisiones académicas basadas en datos 
+comprometidos. 
+ 
+Justificación 
+ La integración de LLMs en procesos administrativos educativos plantea riesgos 
+concretos sobre datos personales de estudiantes, docentes y personal administrativo, 
+sujetos a protección bajo la Ley 1581 de 2012 de Colombia. La adopción de estas 
+tecnologías sin evaluación previa de riesgos puede derivar en brechas de seguridad con 
+consecuencias legales, económicas y reputacionales para las IES (Tabassi, 2023). 
+Investigaciones recientes señalan que los LLMs presentan vulnerabilidades intrínsecas —
+como la memorización de datos de entrenamiento y la generación de respuestas con 
+información confidencial— que representan riesgos sistémicos cuando se despliegan en 
+entornos con datos sensibles (OWASP Foundation, 2025). El contexto de Medellín, con 
+más de 25 IES activas y procesos de transformación digital en curso, hace urgente contar 
+
+ 
+15 
+con diagnósticos específicos que orienten la toma de decisiones institucionales con 
+base en evidencia. 
+Este proyecto se articula con el ODS 4 (Educación de calidad) en su dimensión de 
+entornos de aprendizaje seguros e inclusivos, y con el ODS 16 (Paz, justicia e 
+instituciones sólidas), específicamente con el acceso a la información y la protección de 
+datos ciudadanos. A nivel nacional, el CONPES 4144 y la Hoja de Ruta de IA del 
+Ministerio de Ciencia, Tecnología e Innovación identifican a las IES como actores clave 
+para el desarrollo de una IA ética y sostenible (Departamento Nacional de Planeación, 
+2023; Ministerio de Educación Nacional, 2025). La propuesta de ley en trámite ante el 
+Congreso clasifica los sistemas de IA en educación como de alto riesgo (Hossein-
+Mohand et al., 2025), y este marco regulatorio se alinea con la Recomendación sobre la 
+Ética de la IA de la UNESCO (2021) y el Reglamento de IA de la Unión Europea (2024). 
+Los resultados de esta investigación contribuirán a llenar el vacío teórico existente sobre 
+riesgos de privacidad de LLMs en el contexto educativo latinoamericano. Desde el plano 
+práctico, el framework resultante podrá ser adoptado por las IES de Medellín como 
+insumo para el diseño de políticas internas de gobernanza de IA, fortaleciendo su 
+cumplimiento de la Ley 1581 de 2012 y anticipándose al marco regulatorio en 
+construcción. En el ámbito institucional, los beneficiarios directos incluyen las oficinas 
+TIC, los responsables del tratamiento de datos y los oficiales de protección de datos 
+(DPOs), quienes recibirán un artefacto metodológico estandarizado para auditar sus 
+sistemas. La vinculación con el semillero SIIATE de la ECBTI-UNAD garantiza 
+
+ 
+16 
+continuidad académica e institucional del proyecto y la difusión de cultura de 
+ciberseguridad entre futuros profesionales del área. 
+ 
+Objetivos    
+Objetivo general 
+Diseñar un framework de evaluación de riesgos de privacidad y fuga de datos 
+mediante metodologías de auditoría de privacidad (privacy auditing) y la parametrización 
+de matrices de severidad para garantizar la adopción segura, ética y el cumplimiento del 
+marco normativo de protección de datos personales en el uso de modelos de lenguaje de 
+gran escala (LLM) dentro de las instituciones de educación superior de Medellín, 
+Colombia. 
+ 
+Objetivos específicos 
+• OE1 – Identificar mediante técnicas de revisión bibliográfica y documental los 
+escenarios críticos de uso de herramientas LLM y la taxonomía de datos 
+involucrados para establecer la línea base de exposición normativa en las IES de 
+Medellín. [Bloom N1 – Recordar] 
+• OE2 – Caracterizar a través del mapeo de vulnerabilidades del estándar OWASP 
+Top 10 los mecanismos técnicos de fuga de datos en modelos generativos para 
+determinar su correspondencia con las categorías de datos sensibles de la 
+legislación colombiana. [Bloom N2 – Comprender] 
+
+ 
+17 
+• OE3 – Analizar mediante encuestas estructuradas y entrevistas 
+semiestructuradas las brechas en las políticas institucionales de privacidad frente a 
+las directrices del CONPES 4144 e ISO/IEC 27701 en al menos tres IES de 
+Medellín. [Bloom N4 – Analizar] 
+• OE4 – Evaluar mediante pruebas experimentales con datos sintéticos el nivel de 
+exposición de información para cuantificar, a través de métricas estándar, la 
+probabilidad e impacto de los riesgos de privacidad en contextos educativos. 
+[Bloom N5 – Evaluar] 
+• OE5 – Proponer el framework definitivo con lineamientos y guías de buenas 
+prácticas para orientar la mitigación operativa y el cumplimiento normativo en las 
+IES de Medellín. [Bloom N6 – Crear]. 
+ 
+Delimitación del proyecto 
+Delimitación espacial 
+El proyecto se desarrollará en instituciones de educación superior públicas y privadas 
+ubicadas en Medellín y el área metropolitana del Valle de Aburrá, Antioquia. Se 
+seleccionarán al menos tres IES con uso documentado de herramientas LLM en procesos 
+administrativos o académicos durante el año 2026. No se incluirán instituciones de nivel 
+técnico o tecnológico. 
+Delimitación temporal 
+El proyecto se ejecutará durante el segundo semestre de 2026, con una duración máxima 
+de seis (6) meses, organizados en cuatro sprints de aproximadamente seis semanas cada 
+
+ 
+18 
+uno. El período de recolección de datos primarios (encuestas y entrevistas) se realizará 
+en el Sprint 2 (meses 2-3). 
+Delimitación temática 
+El estudio se inscribe en las áreas de seguridad informática, gobernanza de datos y 
+evaluación de riesgos aplicada a sistemas de inteligencia artificial generativa. No 
+abordará el diseño o modificación de modelos LLM internamente, ni la evaluación de 
+riesgos distintos a los de privacidad y fuga de datos. 
+Delimitación poblacional 
+La población objetivo son los actores institucionales responsables del tratamiento de 
+datos en las IES seleccionadas: directivos de áreas TIC, oficiales de protección de datos 
+(DPOs), docentes usuarios regulares de LLMs y estudiantes de posgrado. Se excluirán 
+menores de 18 años como sujetos de estudio directo. 
+Delimitación tecnológica 
+El prototipo funcional fue desarrollado utilizando tecnologías web modernas de código 
+abierto. Para el frontend se empleó Next.js con React y Tailwind CSS, permitiendo 
+construir una interfaz web responsive e intuitiva para la navegación por los diferentes 
+módulos del framework. El control de versiones se realizó mediante GitHub, mientras 
+que el despliegue del prototipo se efectuó en Vercel, lo que permitió contar con una 
+aplicación accesible desde la web para validar su funcionamiento en un entorno similar al 
+de uso real (TRL 5). La solución fue diseñada con una arquitectura modular que facilita 
+futuras ampliaciones, como la incorporación de mecanismos automáticos de evaluación 
+
+ 
+19 
+de riesgos, generación de reportes e integración con herramientas especializadas de 
+análisis de privacidad. 
+ 
+Marco referencial   
+ Marco Teórico:  
+La fundamentación teórica del proyecto integra tres cuerpos de conocimiento: la 
+gestión de riesgos de sistemas de IA, la auditoría de privacidad en entornos digitales y la 
+gobernanza de datos en organizaciones. 
+Gestión de riesgos de IA (NIST AI RMF 1.0). 
+El AI Risk Management Framework del NIST (Tabassi, 2023) 
+proporciona un modelo de cuatro funciones para la gestión responsable de 
+sistemas de IA: Gobernar (establecer cultura y responsabilidades), Mapear 
+(identificar riesgos contextuales), Medir (analizar, priorizar y cuantificar riesgos) 
+y Gestionar (responder y monitorear riesgos). Este modelo es adoptado como eje 
+estructural del framework a desarrollar, adaptando cada función al contexto 
+específico de las IES colombianas y sus obligaciones bajo la Ley 1581 de 2012. 
+Vulnerabilidades en LLMs (OWASP Top 10). 
+El estándar OWASP Top 10 para LLMs (OWASP Foundation, 2025) 
+categoriza las diez vulnerabilidades más críticas en aplicaciones basadas en 
+modelos de lenguaje. Para este proyecto, los vectores de mayor relevancia son: 
+LLM01 (Inyección de prompts), LLM02 (Manejo inadecuado de salidas), LLM06 
+(Divulgación de información confidencial) y LLM08 (Agencia excesiva). Estas 
+
+ 
+20 
+categorías estructurarán la taxonomía de riesgos de privacidad que se construirá 
+en el OE2. 
+Memorización en LLMs. 
+Carlini et al. (2021) demostraron que los LLMs pueden memorizar y 
+reproducir información personal de sus datos de entrenamiento. Esta 
+vulnerabilidad de memorización implica que los usuarios que interactúan con 
+plataformas LLM de terceros pueden estar contribuyendo involuntariamente al 
+futuro entrenamiento de modelos con datos identificables, sin que exista control 
+institutional sobre dicha transferencia. 
+Ciberseguridad en sistemas con componentes de IA. 
+Camacho et al. (2024) proponen un modelo de evaluación de 
+ciberseguridad específicamente diseñado para sistemas que integran componentes 
+de IA, destacando la necesidad de adaptar los marcos tradicionales de gestión de 
+riesgos (ISO/IEC 27001) para contemplar los vectores de ataque únicos de los 
+modelos generativos, como la adversarial robustness y el data poisoning. 
+Gobernanza de IA en IES. 
+Delgado Salas et al. (2025) analizaron modelos de gobernanza de IA 
+implementados en universidades iberoamericanas, identificando que las 
+instituciones con mayor madurez digital habían adoptado políticas de IA ética que 
+incorporaban principios de privacidad desde el diseño (privacy by design) como 
+condición previa al despliegue de cualquier herramienta de IA. Sus hallazgos 
+orientarán la fase de propuesta del framework (OE5). 
+
+ 
+21 
+ 
+Marco conceptual:  
+Modelos de Lenguaje de Gran Escala (LLM). 
+Los LLM son sistemas de inteligencia artificial entrenados con grandes 
+corpus de datos textuales mediante técnicas de deep learning, específicamente 
+arquitecturas basadas en transformadores, que les permiten comprender y generar 
+lenguaje natural con alta fluidez y coherencia (Brown et al., 2020). En el contexto 
+educativo, los LLM se despliegan como asistentes conversacionales, motores de 
+resumen, generadores de retroalimentación automatizada y herramientas de 
+soporte administrativo, procesando en su interacción datos que pueden incluir 
+información personal identificable de los usuarios. 
+Fuga de datos y memorización en LLMs. 
+La fuga de datos en el contexto de los LLMs se refiere a la divulgación no 
+intencional de información confidencial a través de las respuestas generadas por el 
+modelo. Este fenómeno puede ocurrir por dos mecanismos principales: la 
+memorización de datos de entrenamiento, mediante la cual el modelo reproduce 
+verbatim fragmentos de información privada presentes en el corpus de 
+entrenamiento (Carlini et al., 2021), y la inferencia a partir de contexto, donde el 
+modelo extrapola información confidencial a partir de patrones estadísticos 
+aprendidos. Ambos mecanismos son especialmente riesgosos en entornos 
+educativos donde los prompts frecuentemente contienen datos identificables. 
+Auditoría de privacidad (Privacy Auditing). 
+
+ 
+22 
+La auditoría de privacidad es el proceso sistemático de evaluación de las 
+medidas técnicas y organizacionales implementadas por una entidad para proteger 
+los datos personales bajo su custodia, verificando su conformidad con los 
+requisitos legales aplicables y con los estándares internacionales de protección de 
+datos (ISO/IEC 27701). En el contexto de los sistemas de IA, el privacy auditing 
+incorpora pruebas específicas de extracción de información memorizada, análisis 
+de flujos de datos hacia proveedores externos y evaluación de las cláusulas 
+contractuales de tratamiento de datos. 
+Gobernanza de datos en IA. 
+La gobernanza de datos en el contexto de sistemas de inteligencia artificial 
+abarca el conjunto de políticas, procedimientos, roles y tecnologías que una 
+organización implementa para garantizar que los datos utilizados o generados por 
+sistemas de IA sean manejados de forma íntegra, segura, conforme a la regulación 
+y alineada con los valores éticos institucionales (Delgado Salas et al., 2025). Los 
+elementos clave de un modelo de gobernanza de datos para IA incluyen: 
+clasificación de datos, definición de responsabilidades (data ownership), 
+protocolos de consentimiento informado, mecanismos de trazabilidad y 
+procedimientos de respuesta a incidentes. 
+Framework de evaluación de riesgos. 
+En ingeniería de sistemas, un framework de evaluación de riesgos es un 
+conjunto estructurado de procedimientos, criterios y herramientas que permite 
+identificar, analizar, priorizar y proponer respuestas ante amenazas que pueden 
+
+ 
+23 
+afectar los activos de información de una organización (Tabassi, 2023). Para el 
+contexto de LLMs en IES, el framework propuesto en este proyecto integrará 
+matrices de severidad basadas en probabilidad e impacto, adaptadas al marco 
+normativo de la Ley 1581 de 2012 y a las vulnerabilidades técnicas documentadas 
+por OWASP (2025). 
+ 
+Marco Legal:  
+Tabla 2. Marco legal 
+Norma Contenido relevante Relación con el proyecto 
+Ley 1581 de 
+2012 
+(Colombia) 
+Régimen General de Protección de 
+Datos Personales. Principios de 
+finalidad, veracidad, acceso, 
+circulación y seguridad. 
+Marco legal base: todas las IES 
+son responsables del tratamiento 
+de datos personales de su 
+comunidad universitaria. 
+Decreto 1377 
+de 2013 
+(Colombia) 
+Reglamento de la Ley 1581. Define 
+responsable y encargado del 
+tratamiento, consentimiento y aviso 
+de privacidad. 
+Regula la relación entre las IES 
+(responsables) y los proveedores 
+de LLMs (encargados de facto). 
+CONPES 4144 
+de 2023 
+(Colombia) 
+Política Nacional de Inteligencia 
+Artificial. Lineamientos de 
+gobernanza de IA para entidades 
+públicas y privadas. 
+El framework propuesto se alinea 
+con las metas de gobernanza 
+responsable de IA del CONPES. 
+
+ 
+24 
+Norma Contenido relevante Relación con el proyecto 
+EU AI Act 
+(UE, 2024) 
+Clasifica sistemas de IA en educación 
+(evaluación, admisión, seguimiento) 
+como de alto riesgo con obligaciones 
+de transparencia. 
+Referente internacional para 
+anticipar la regulación 
+colombiana emergente. 
+Proyecto de 
+Ley IA 
+(Colombia, 
+2025) 
+Clasifica los sistemas de IA en 
+educación como de alto riesgo. En 
+trámite ante el Congreso. 
+Refuerza la urgencia del proyecto 
+y orienta el marco de 
+cumplimiento normativo del 
+framework. 
+UNESCO 
+(2021). 
+Recomendación 
+sobre la Ética 
+de la IA 
+Principios éticos globales para el 
+desarrollo y uso de IA: transparencia, 
+responsabilidad, privacidad y no 
+discriminación. 
+Marco de referencia ético para 
+los lineamientos de buenas 
+prácticas del framework. 
+ 
+Marco Tecnológico: 
+El desarrollo del prototipo se apoyó en tecnologías web modernas que 
+permiten construir aplicaciones rápidas, escalables y de fácil mantenimiento. La 
+aplicación fue desarrollada con Next.js, aprovechando las capacidades de React 
+para la creación de interfaces dinámicas y Tailwind CSS para el diseño responsive 
+de los diferentes módulos del sistema. 
+
+ 
+25 
+Como soporte conceptual para la evaluación de riesgos se utilizaron los 
+lineamientos del NIST AI Risk Management Framework (AI RMF 1.0) y el 
+OWASP Top 10 para LLM, los cuales sirvieron como base para estructurar los 
+riesgos, las recomendaciones y los lineamientos presentados en el framework. El 
+código fuente fue administrado mediante GitHub, permitiendo el trabajo 
+colaborativo entre los integrantes del equipo y el seguimiento de las diferentes 
+versiones del proyecto. Finalmente, el prototipo fue desplegado en Vercel, 
+proporcionando una versión funcional accesible desde cualquier navegador para 
+evidenciar el cumplimiento del nivel de madurez tecnológica TRL 5.  
+Metodología  
+Para el desarrollo del framework y del prototipo funcional se empleó la 
+metodología ágil Scrum, organizando el trabajo en diferentes sprints que 
+permitieron avanzar de manera incremental en el diseño, desarrollo y validación 
+del proyecto. Durante este proceso se realizaron actividades de levantamiento de 
+requerimientos, diseño de la arquitectura, implementación del prototipo, pruebas 
+funcionales y documentación de los resultados. Esta metodología facilitó el 
+trabajo colaborativo entre los integrantes del equipo y permitió incorporar mejoras 
+continuas durante el desarrollo del sistema. 
+ 
+ 
+ 
+ 
+
+ 
+26 
+Muestra y población del proyecto 
+Población 
+La población estará conformada por instituciones de educación superior 
+públicas y privadas de la ciudad de Medellín que actualmente utilizan o se 
+encuentran implementando herramientas basadas en inteligencia artificial 
+generativa para actividades académicas o administrativas. 
+ 
+Muestra 
+La muestra estará integrada por al menos tres instituciones de educación 
+superior seleccionadas mediante un muestreo no probabilístico por conveniencia, 
+considerando su disponibilidad para participar en la investigación y el nivel de 
+incorporación de herramientas basadas en LLM. 
+ 
+Instrumento de medición y recolección de los datos 
+Para el desarrollo de la investigación se emplearán los siguientes instrumentos: 
+- Encuestas estructuradas.  
+- Entrevistas semiestructuradas.  
+- Revisión documental de políticas institucionales.  
+- Matrices de evaluación de riesgos.  
+- Listas de verificación basadas en OWASP Top 10 para LLM y NIST AI  
+         RMF. 
+Análisis y diagnóstico del proceso investigativo 
+La información cuantitativa será analizada mediante estadística descriptiva 
+utilizando frecuencias, porcentajes y gráficos comparativos. La información 
+cualitativa será analizada mediante categorización temática y análisis de 
+
+ 
+27 
+contenido, permitiendo identificar patrones relacionados con la gobernanza de 
+datos y los riesgos de privacidad. 
+ 
+Metodología de desarrollo de software  de acuerdo  a la que seleccionaron 
+para el proyecto.  
+Para el desarrollo del framework y del prototipo funcional se utilizará la 
+metodología ágil SCRUM, debido a que permite organizar el proyecto en ciclos 
+cortos de trabajo (Sprints), facilitando la validación continua de los resultados y la 
+incorporación de mejoras durante el proceso de investigación. 
+El desarrollo estará dividido en cinco etapas: 
+- Levantamiento y análisis de requerimientos.  
+- Diseño de la arquitectura del framework.  
+- Desarrollo del prototipo funcional.  
+- Pruebas experimentales utilizando datos sintéticos.  
+- Validación de resultados y documentación del proyecto.  
+ 
+Esta metodología permitirá mantener un desarrollo incremental y flexible, 
+garantizando la calidad del producto obtenido y facilitando su adaptación a los 
+requerimientos identificados durante la investigación. 
+ 
+Análisis de requerimientos 
+El análisis de requerimientos tiene como propósito identificar las 
+necesidades funcionales y técnicas que deberá cumplir el framework propuesto 
+para apoyar la evaluación de riesgos de privacidad y fuga de datos asociados al 
+
+ 
+28 
+uso de Modelos de Lenguaje de Gran Escala (LLM) en instituciones de 
+educación superior. 
+ 
+A partir de la revisión bibliográfica, las entrevistas y las encuestas 
+realizadas, se identificarán los requerimientos que orientarán el diseño del 
+prototipo. 
+ 
+Requerimientos funcionales 
+ 
+Tabla 3. Requerimientos funcionales 
+Código Requerimiento 
+RF-01 Registrar la información general de la institución evaluada. 
+RF-02 
+Permitir diligenciar un cuestionario de evaluación de riesgos 
+relacionados con el uso de LLM. 
+RF-03 
+Identificar riesgos de privacidad de acuerdo con criterios establecidos 
+en OWASP Top 10 para LLM y NIST AI RMF. 
+RF-04 
+Calcular el nivel de riesgo (bajo, medio o alto) según la información 
+registrada. 
+RF-05 
+Generar un reporte con los resultados de la evaluación y 
+recomendaciones de mitigación. 
+RF-06 Almacenar los resultados de las evaluaciones para futuras consultas. 
+ 
+Requerimientos no funcionales 
+ 
+Tabla 4. Requerimientos no funcionales 
+Código Requerimiento 
+RNF-01 El sistema deberá ser de fácil uso para personal sin conocimientos 
+técnicos avanzados. 
+RNF-02 La información almacenada deberá garantizar confidencialidad y 
+disponibilidad. 
+RNF-03 La solución deberá desarrollarse utilizando herramientas de software 
+libre cuando sea posible. 
+
+ 
+29 
+RNF-04 El prototipo deberá permitir futuras ampliaciones e integración con 
+otros sistemas. 
+RNF-05 La interfaz deberá ser intuitiva y responsive para facilitar su 
+utilización. 
+ 
+ 
+Criterios de aceptación 
+El prototipo se considerará funcional cuando permita realizar una evaluación 
+completa de riesgos, generar un reporte con el nivel de riesgo identificado y presentar 
+recomendaciones de mitigación alineadas con los lineamientos de seguridad y privacidad 
+establecidos en la literatura y la normativa vigente. 
+ 
+Diseño de la solución   
+La solución propuesta consiste en el desarrollo de un framework para la 
+evaluación de riesgos de privacidad asociados al uso de Modelos de Lenguaje de Gran 
+Escala (LLM) dentro de instituciones de educación superior. 
+El framework estará compuesto por los siguientes módulos: 
+ 
+- Módulo de caracterización institucional, encargado de recopilar información 
+sobre el uso de herramientas de inteligencia artificial dentro de la institución.  
+- Módulo de identificación de riesgos, basado en los lineamientos del OWASP 
+Top 10 para LLM y el NIST AI Risk Management Framework.  
+- Módulo de evaluación, responsable de calcular el nivel de riesgo mediante 
+matrices de probabilidad e impacto.  
+- Módulo de generación de reportes, que permitirá presentar recomendaciones 
+orientadas al fortalecimiento de la gobernanza de datos y el cumplimiento de la 
+normativa colombiana.  
+ 
+
+ 
+30 
+La arquitectura propuesta facilitará futuras ampliaciones e integración con 
+herramientas especializadas de auditoría de privacidad como Microsoft Presidio y 
+Giskard AI. 
+ 
+Cronograma de actividades 
+ 
+Tabla 5. Cronograma de actividades 
+Actividad M1 M2 M3 M4 M5 M6 
+Revisión 
+bibliográfica 
+X X     
+Diseño 
+metodológico 
+X X     
+Diseño del 
+framework 
+ X X    
+Aplicación de 
+encuestas y 
+entrevistas 
+  X X   
+Análisis de 
+resultados 
+   X X  
+Desarrollo del 
+prototipo 
+  X X X  
+Validación 
+experimental 
+    X  
+Elaboración del 
+documento final 
+    X X 
+Sustentación      X 
+ 
+Recursos necesarios para la implementación 
+Tabla 6. Recursos necesarios 
+Recurso Descripción Presupuesto (COP) 
+Equipo humano 
+Investigadores (3 
+estudiantes y director) 
+$0 
+
+ 
+31 
+Equipos y software 
+Computadores, Python, 
+Visual Studio Code, 
+Giskard AI, Microsoft 
+Presidio 
+$0 
+Viajes y salidas de campo 
+Visitas a instituciones 
+educativas 
+$300.000 
+Materiales y suministros 
+Papelería, impresiones, 
+almacenamiento 
+$150.000 
+Bibliografía 
+Bases de datos y recursos 
+institucionales UNAD 
+$0 
+Total  $450.000 
+ 
+ 
+
+ 
+32 
+Resultados del desarrollo del prototipo 
+Como resultado del proceso de desarrollo se implementó un prototipo web 
+funcional que materializa el framework de evaluación de riesgos de privacidad y 
+fuga de datos en el uso de modelos de lenguaje de gran escala (LLM). La 
+aplicación permite navegar por los diferentes módulos del framework, consultar 
+información relacionada con riesgos de privacidad, conocer los lineamientos 
+basados en NIST AI RMF y OWASP, y visualizar recomendaciones orientadas al 
+uso responsable de herramientas de inteligencia artificial en instituciones de 
+educación superior. El prototipo fue publicado en la plataforma Vercel y su 
+código fuente se encuentra disponible en un repositorio de GitHub, permitiendo 
+evidenciar el cumplimiento del nivel de madurez tecnológica TRL 5. 
+ 
+
+ 
+33 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+34 
+Conclusiones 
+ 
+• La formulación de esta propuesta permite identificar un problema con alta 
+pertinencia regional y académica: la ausencia de instrumentos de gobernanza de datos 
+adaptados al uso de LLMs en las IES de Medellín representa un riesgo sistémico que, 
+de no intervenirse, derivará en sanciones normativas, pérdidas reputacionales y 
+vulneración de derechos de privacidad de la comunidad universitaria. 
+• El proceso de identificación del problema ha permitido articular de manera 
+consistente el planteamiento, la justificación, los objetivos y la metodología. La 
+propuesta demuestra viabilidad técnica y metodológica dentro del período de seis 
+meses, al acotar el alcance hacia el diseño de un framework evaluativo basado en 
+datos sintéticos y entornos simulados, sin requerir infraestructura física adicional ni 
+trámites institucionales complejos. 
+• Los avances de esta fase —en particular la construcción del árbol causal 
+con cuatro niveles, la incorporación de los antecedentes internacionales, nacionales y 
+regionales como sección independiente, y la incorporación explícita de los parámetros 
+de población y muestra en la metodología— responden directamente a las 
+observaciones formuladas por el director de curso y los pares revisores del F-7-9-1. 
+Las siguientes fases del proyecto se concentrarán en la recolección de datos primarios 
+en las IES seleccionadas y en la ejecución de las pruebas de auditoría de privacidad. 
+ 
+
+ 
+35 
+Referencias 
+ 
+• Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., 
+Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., 
+Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., 
+... Amodei, D. (2020). Language models are few-shot learners. Advances in Neural 
+Information Processing Systems, 33, 1877–1901. 
+• Bucheli, H. A. (2019). CDIO (Concebir, Diseñar, Implementar y Operar) 
+iniciativa para la resolución de problemas en ingeniería [Objeto virtual de 
+aprendizaje]. Repositorio Institucional UNAD. 
+https://repository.unad.edu.co/handle/10596/33800 
+• Camacho, R., Torres, L., & Vidal, M. (2024). Cybersecurity assessment 
+frameworks for AI-enabled systems. IEEE Transactions on Information Forensics and 
+Security, 19(3), 412–428. https://doi.org/10.1109/TIFS.2024.00312 
+• Carlini, N., Tramèr, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, 
+K., Roberts, A., Brown, T. B., Song, D., Erlingsson, Ú., Oprea, A., & Raffel, C. 
+(2021). Extracting training data from large language models. Proceedings of the 30th 
+USENIX Security Symposium, 2633–2650. 
+• Congreso de la República de Colombia. (2012). Ley 1581 de 2012, por la 
+cual se dictan disposiciones generales para la protección de datos personales. Diario 
+Oficial. 
+
+ 
+36 
+• Congreso de la República de Colombia. (2025). Proyecto de ley de 
+regulación de inteligencia artificial. Cámara de Representantes. 
+• Delgado Salas, F., Ramírez, P., & Gutiérrez, V. (2025). AI governance 
+models in Ibero-American higher education institutions. Educación y Tecnología, 
+12(1), 45–67. 
+• Departamento Nacional de Planeación. (2023). CONPES 4144: Política 
+Nacional de Inteligencia Artificial. DNP. 
+• Hossein-Mohand, H., Hossein-Mohand, H., Trujillo-Torres, J. M., & 
+Gómez-García, M. (2025). AI literacy and digital competencies in Colombian higher 
+education: A national assessment. Heliyon, 11(2), e25903. 
+https://doi.org/10.1016/j.heliyon.2025.e25903 
+• Ministerio de Educación Nacional. (2025). Informe sobre competencias 
+digitales y adopción de inteligencia artificial en educación superior colombiana. 
+MinEducación. 
+• Mora Torres, A. (2026). Brechas en gobernanza digital en IES de Medellín 
+[Trabajo de grado]. Repositorio UNAD. 
+• OWASP Foundation. (2025). OWASP Top 10 for large language model 
+applications. OWASP. https://owasp.org/www-project-top-10-for-large-language-
+model-applications/ 
+• Parlamento Europeo y Consejo de la Unión Europea. (2024). Reglamento 
+(UE) 2024/1689 del Parlamento Europeo y del Consejo por el que se establecen 
+
+ 
+37 
+normas armonizadas en materia de inteligencia artificial. Diario Oficial de la Unión 
+Europea. 
+• Presidencia de la República de Colombia. (2013). Decreto 1377 de 2013, 
+por el cual se reglamenta parcialmente la Ley 1581 de 2012. Diario Oficial. 
+• Rivas, A. (2025). Estrategias institucionales de IA ética en universidades 
+latinoamericanas. Revista Iberoamericana de Educación Superior, 16(44), 89–107. 
+• Tabassi, E. (2023). Artificial intelligence risk management framework (AI 
+RMF 1.0). National Institute of Standards and Technology. 
+https://doi.org/10.6028/NIST.AI.100-1 
+• UNESCO. (2021). Recomendación sobre la ética de la inteligencia 
+artificial. UNESCO. 
+• Vasquez Blanco, C. (2026). Adopción de LLMs en educación superior 
+latinoamericana: análisis de riesgos institucionales [Trabajo de grado]. Repositorio 
+UNAD. 
+• Wada, K., Yoshida, M., & Park, S. (2025). Privacy risks in AI-mediated 
+educational systems. Journal of Information Security and Applications, 78, 103620. 
+https://doi.org/10.1016/j.jisa.2025.103620 

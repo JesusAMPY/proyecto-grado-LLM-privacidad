@@ -96,6 +96,25 @@ El prototipo es una **plataforma web educativa interactiva** que implementa el m
 
 ---
 
+## 📄 Documento Maestro
+
+El **Documento Maestro del Proyecto** contiene la investigación completa, metodología, resultados y análisis detallado del marco de privacidad LLM para instituciones de educación superior colombianas.
+
+**Descargar:** [Documento-Maestro.pdf](/documentos/Documento-Maestro.pdf)
+
+**Contenido:**
+- Introducción y contexto regulatorio
+- Líneas de investigación y objetivos
+- Marco conceptual, legal y tecnológico
+- Metodología de desarrollo
+- Análisis de riesgos de privacidad
+- Casos de estudio reales
+- Mapeo de cumplimiento normativo
+- Cronograma e implementación
+- Conclusiones y recomendaciones
+
+---
+
 ## 📊 Evidencias del Prototipo
 
 ### Páginas Implementadas
