@@ -64,14 +64,13 @@ export default function MoreInfoPage() {
                   </div>
                 </div>
                 <a
-                  href="/documentos/Documento-Maestro.pdf"
-                  download="Documento-Maestro.pdf"
+                  href="https://drive.google.com/file/d/1sEWhc1aDWmQLaHQ2jJwAjH3Lgbak3O7q/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                 >
                   <Download className="w-5 h-5" />
-                  Descargar Documento Maestro (PDF)
+                  Acceder a Documento Maestro en Google Drive
                 </a>
               </div>
             </div>
