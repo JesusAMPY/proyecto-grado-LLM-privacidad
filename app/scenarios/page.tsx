@@ -1,12 +1,13 @@
-import { scenarios } from '@/lib/data/scenarios'
-import { HeroSection } from '@/components/HeroSection'
-import { Metadata } from 'next'
-import { BookOpen, Lightbulb, TrendingUp } from 'lucide-react'
+import { scenarios } from "@/lib/data/scenarios";
+import { HeroSection } from "@/components/HeroSection";
+import { Metadata } from "next";
+import { BookOpen, Lightbulb, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Casos de Estudio y Escenarios | Marco de Privacidad LLM',
-  description: 'Casos de estudio reales mostrando cómo las IES colombianas pueden implementar LLM protegiendo privacidad',
-}
+  title: "Casos de Estudio y Escenarios | Marco de Privacidad LLM",
+  description:
+    "Casos de estudio reales mostrando cómo las IES colombianas pueden implementar LLM protegiendo privacidad",
+};
 
 export default function ScenariosPage() {
   return (
@@ -19,16 +20,27 @@ export default function ScenariosPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-4">Escenarios de Implementación</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Escenarios de Implementación
+          </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
-            A continuación se presentan escenarios detallados mostrando cómo las instituciones de educación superior colombianas pueden implementar LLM en diferentes contextos mientras identifican y mitigan riesgos de privacidad. Cada escenario incluye el contexto institucional, desafíos específicos de privacidad, soluciones propuestas y lecciones clave aprendidas.
+            A continuación se presentan escenarios detallados mostrando cómo las
+            instituciones de educación superior colombianas pueden implementar
+            LLM en diferentes contextos mientras identifican y mitigan riesgos
+            de privacidad. Cada escenario incluye el contexto institucional,
+            desafíos específicos de privacidad, soluciones propuestas y
+            lecciones clave aprendidas.
           </p>
         </section>
 
         {/* Scenarios */}
         <section className="space-y-12">
           {scenarios.map((scenario, index) => (
-            <ScenarioCard key={scenario.id} scenario={scenario} index={index + 1} />
+            <ScenarioCard
+              key={scenario.id}
+              scenario={scenario}
+              index={index + 1}
+            />
           ))}
         </section>
 
@@ -72,11 +84,14 @@ export default function ScenariosPage() {
 
         {/* Decision Framework */}
         <section className="mt-20 pt-20 border-t border-border">
-          <h2 className="text-3xl font-bold mb-12">Marco de Decisión para Adopción de LLM</h2>
+          <h2 className="text-3xl font-bold mb-12">
+            Marco de Decisión para Adopción de LLM
+          </h2>
 
           <div className="bg-card border-2 border-primary p-8 rounded-lg mb-8">
             <p className="text-muted-foreground mb-6">
-              Antes de implementar cualquier aplicación LLM en tu institución, considera estas preguntas clave:
+              Antes de implementar cualquier aplicación LLM en tu institución,
+              considera estas preguntas clave:
             </p>
           </div>
 
@@ -89,7 +104,9 @@ export default function ScenariosPage() {
 
         {/* Getting Started */}
         <section className="mt-20 pt-20 border-t border-border">
-          <h2 className="text-3xl font-bold mb-8">Cómo Comenzar en Tu Institución</h2>
+          <h2 className="text-3xl font-bold mb-8">
+            Cómo Comenzar en Tu Institución
+          </h2>
 
           <div className="bg-secondary/50 p-8 rounded-lg space-y-6">
             <div className="flex gap-4">
@@ -97,10 +114,13 @@ export default function ScenariosPage() {
                 1
               </div>
               <div>
-                <h3 className="font-bold text-foreground mb-2">Formar un Comité de Gobernanza</h3>
+                <h3 className="font-bold text-foreground mb-2">
+                  Formar un Comité de Gobernanza
+                </h3>
                 <p className="text-muted-foreground text-sm">
-                  Reúne seguridad de TI, protección de datos, legal y líderes departamentales relevantes para guiar
-                  decisiones de adopción de LLM.
+                  Reúne seguridad de TI, protección de datos, legal y líderes
+                  departamentales relevantes para guiar decisiones de adopción
+                  de LLM.
                 </p>
               </div>
             </div>
@@ -110,10 +130,13 @@ export default function ScenariosPage() {
                 2
               </div>
               <div>
-                <h3 className="font-bold text-foreground mb-2">Realizar Evaluación de Impacto de Privacidad (DPIA)</h3>
+                <h3 className="font-bold text-foreground mb-2">
+                  Realizar Evaluación de Impacto de Privacidad (DPIA)
+                </h3>
                 <p className="text-muted-foreground text-sm">
-                  Usa una plantilla DPIA estandarizada para documentar el panorama actual de datos, identificar riesgos y
-                  planificar mitigaciones específicas para tu institución.
+                  Usa una plantilla DPIA estandarizada para documentar el
+                  panorama actual de datos, identificar riesgos y planificar
+                  mitigaciones específicas para tu institución.
                 </p>
               </div>
             </div>
@@ -123,10 +146,13 @@ export default function ScenariosPage() {
                 3
               </div>
               <div>
-                <h3 className="font-bold text-foreground mb-2">Mapea Tu Estado de Cumplimiento</h3>
+                <h3 className="font-bold text-foreground mb-2">
+                  Mapea Tu Estado de Cumplimiento
+                </h3>
                 <p className="text-muted-foreground text-sm">
-                  Usa este marco para evaluar cumplimiento con Ley 1581, CONPES 4144 y estándares internacionales.
-                  Identifica brechas y prioriza remediación.
+                  Usa este marco para evaluar cumplimiento con Ley 1581, CONPES
+                  4144 y estándares internacionales. Identifica brechas y
+                  prioriza remediación.
                 </p>
               </div>
             </div>
@@ -136,10 +162,13 @@ export default function ScenariosPage() {
                 4
               </div>
               <div>
-                <h3 className="font-bold text-foreground mb-2">Piloto con Casos de Uso de Bajo Riesgo</h3>
+                <h3 className="font-bold text-foreground mb-2">
+                  Piloto con Casos de Uso de Bajo Riesgo
+                </h3>
                 <p className="text-muted-foreground text-sm">
-                  Comienza con aplicaciones LLM que involucren datos personales mínimos o información no sensible, aprende
-                  de la experiencia, luego expande cuidadosamente.
+                  Comienza con aplicaciones LLM que involucren datos personales
+                  mínimos o información no sensible, aprende de la experiencia,
+                  luego expande cuidadosamente.
                 </p>
               </div>
             </div>
@@ -149,10 +178,13 @@ export default function ScenariosPage() {
                 5
               </div>
               <div>
-                <h3 className="font-bold text-foreground mb-2">Establecer Monitoreo Continuo</h3>
+                <h3 className="font-bold text-foreground mb-2">
+                  Establecer Monitoreo Continuo
+                </h3>
                 <p className="text-muted-foreground text-sm">
-                  Configura auditorías regulares, revisiones de cumplimiento y evaluaciones de privacidad para asegurar cumplimiento
-                  continuo a medida que el uso de LLM y regulaciones evolucionan.
+                  Configura auditorías regulares, revisiones de cumplimiento y
+                  evaluaciones de privacidad para asegurar cumplimiento continuo
+                  a medida que el uso de LLM y regulaciones evolucionan.
                 </p>
               </div>
             </div>
@@ -160,19 +192,28 @@ export default function ScenariosPage() {
         </section>
       </div>
     </>
-  )
+  );
 }
 
-function ScenarioCard({ scenario, index }: { scenario: (typeof scenarios)[0]; index: number }) {
+function ScenarioCard({
+  scenario,
+  index,
+}: {
+  scenario: (typeof scenarios)[0];
+  index: number;
+}) {
   return (
     <div className="p-8 rounded-lg border-2 border-border bg-card hover:border-primary transition-colors">
       <div className="mb-6">
         <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-3">
           Escenario {index}
         </div>
-        <h3 className="text-2xl font-bold text-primary mb-2">{scenario.title}</h3>
+        <h3 className="text-2xl font-bold text-primary mb-2">
+          {scenario.title}
+        </h3>
         <p className="text-sm text-muted-foreground">
-          Tipo de Institución: <span className="font-semibold">{scenario.institution}</span>
+          Tipo de Institución:{" "}
+          <span className="font-semibold">{scenario.institution}</span>
         </p>
       </div>
 
@@ -188,14 +229,18 @@ function ScenarioCard({ scenario, index }: { scenario: (typeof scenarios)[0]; in
           <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
             <span className="text-lg">⚠️</span> Desafío de Privacidad
           </h4>
-          <p className="text-muted-foreground text-sm">{scenario.privacyChallenge}</p>
+          <p className="text-muted-foreground text-sm">
+            {scenario.privacyChallenge}
+          </p>
         </div>
 
         <div className="p-4 bg-green-50 dark:bg-green-950 rounded-lg border border-green-200 dark:border-green-800">
           <h4 className="font-bold text-green-900 dark:text-green-100 mb-2 flex items-center gap-2">
             <span className="text-lg">✓</span> Enfoque de Solución
           </h4>
-          <p className="text-green-800 dark:text-green-200 text-sm">{scenario.solutionApproach}</p>
+          <p className="text-green-800 dark:text-green-200 text-sm">
+            {scenario.solutionApproach}
+          </p>
         </div>
 
         <div>
@@ -204,7 +249,10 @@ function ScenarioCard({ scenario, index }: { scenario: (typeof scenarios)[0]; in
           </h4>
           <ul className="space-y-2">
             {scenario.keyLessons.map((lesson, idx) => (
-              <li key={idx} className="text-sm text-muted-foreground flex gap-2">
+              <li
+                key={idx}
+                className="text-sm text-muted-foreground flex gap-2"
+              >
                 <span className="text-primary flex-shrink-0">•</span>
                 <span>{lesson}</span>
               </li>
@@ -213,10 +261,15 @@ function ScenarioCard({ scenario, index }: { scenario: (typeof scenarios)[0]; in
         </div>
 
         <div>
-          <h4 className="font-bold text-foreground mb-2 text-sm">Applicable Standards:</h4>
+          <h4 className="font-bold text-foreground mb-2 text-sm">
+            Applicable Standards:
+          </h4>
           <div className="flex flex-wrap gap-2">
             {scenario.applicableStandards.map((standard, idx) => (
-              <span key={idx} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <span
+                key={idx}
+                className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold"
+              >
                 {standard}
               </span>
             ))}
@@ -224,7 +277,7 @@ function ScenarioCard({ scenario, index }: { scenario: (typeof scenarios)[0]; in
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function LessonCard({
@@ -232,9 +285,9 @@ function LessonCard({
   title,
   description,
 }: {
-  icon: React.ReactNode
-  title: string
-  description: string
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }) {
   return (
     <div className="p-6 rounded-lg border border-border bg-card">
@@ -242,10 +295,16 @@ function LessonCard({
       <h3 className="font-bold text-foreground mb-3">{title}</h3>
       <p className="text-sm text-muted-foreground">{description}</p>
     </div>
-  )
+  );
 }
 
-function DecisionQuestion({ question, index }: { question: string; index: number }) {
+function DecisionQuestion({
+  question,
+  index,
+}: {
+  question: string;
+  index: number;
+}) {
   return (
     <div className="p-4 rounded-lg border border-border bg-card flex gap-3">
       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold">
@@ -255,16 +314,16 @@ function DecisionQuestion({ question, index }: { question: string; index: number
         <p className="text-foreground font-medium text-sm">{question}</p>
       </div>
     </div>
-  )
+  );
 }
 
 const decisionQuestions = [
-  'What sensitive personal data would this LLM application require access to?',
-  'Is this decision (if used for decision-making) significant enough to require human approval?',
-  'What are the potential privacy impacts if the LLM makes errors or acts unexpectedly?',
-  'Can this use case be achieved with anonymized or minimized data instead?',
-  'Have stakeholders (students, researchers, employees) consented to this use?',
-  'What audit and accountability mechanisms will we implement?',
-  'How will we respond if a privacy breach or incident occurs?',
-  'Is the benefit of this LLM application proportionate to its privacy risks?',
-]
+  "¿A qué datos personales sensibles requeriría acceder esta aplicación LLM?",
+  "¿Es esta decisión (si se utiliza para la toma de decisiones) lo suficientemente significativa como para requerir aprobación humana?",
+  "¿Cuáles son los posibles impactos en la privacidad si el LLM comete errores o actúa de forma inesperada?",
+  "¿Se puede lograr este caso de uso con datos anonimizados o minimizados?",
+  "¿Han consentido los interesados (estudiantes, investigadores, empleados) en este uso?",
+  "¿Qué mecanismos de auditoría y rendición de cuentas implementaremos?",
+  "¿Cómo responderemos si ocurre una violación de privacidad o un incidente?",
+  "¿Es el beneficio de esta aplicación LLM proporcional a sus riesgos de privacidad?",
+];
