@@ -13,6 +13,7 @@ export function Navigation() {
     { label: 'Cumplimiento', href: '/compliance' },
     { label: 'Escenarios', href: '/scenarios' },
     { label: 'Prototipo', href: '/prototype' },
+    { label: 'Evaluación', href: '/evaluation' },
     { label: 'Recursos', href: '/resources' },
     { label: 'Más Información', href: '/more-info' },
     { label: 'Acerca de', href: '/about' },
