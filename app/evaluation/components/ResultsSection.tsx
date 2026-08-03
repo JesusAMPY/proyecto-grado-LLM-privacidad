@@ -12,68 +12,8 @@ export function ResultsSection({ institutionId, onRestart }: ResultsSectionProps
   const institution = institutions.find((i) => i.id === institutionId)
 
   const handleDownloadPDF = () => {
-    // Mock PDF download
-    const pdfContent = generatePDFContent()
-    const element = document.createElement('a')
-    const file = new Blob([pdfContent], { type: 'text/plain' })
-    element.href = URL.createObjectURL(file)
-    element.download = `Informe-Privacidad-LLM-${new Date().toISOString().split('T')[0]}.txt`
-    document.body.appendChild(element)
-    element.click()
-    document.body.removeChild(element)
-  }
-
-  const generatePDFContent = () => {
-    return `
-INFORME DE EVALUACIÓN DE PRIVACIDAD - LLM EN INSTITUCIONES DE EDUCACIÓN SUPERIOR
-${'='.repeat(80)}
-
-Institución: ${institution?.name}
-Ciudad: ${institution?.city}
-Tipo: ${institution?.type}
-Estudiantes: ${institution?.studentCount.toLocaleString()}
-
-Fecha de Evaluación: ${new Date().toLocaleDateString('es-CO')}
-
-${'='.repeat(80)}
-
-PUNTUACIÓN GENERAL
-${'='.repeat(80)}
-
-Puntuación Total: ${overallScore.total}/${overallScore.maxTotal}
-Porcentaje: ${overallScore.percentage}%
-Nivel de Riesgo: ${overallScore.level}
-
-${'='.repeat(80)}
-
-RESULTADOS POR CATEGORÍA
-${'='.repeat(80)}
-
-${mockResults
-  .map(
-    (result) => `
-CATEGORÍA: ${result.category}
-Score: ${result.score}/${result.maxScore} (${result.percentage}%)
-
-RECOMENDACIONES:
-${result.recommendations.map((rec, i) => `${i + 1}. ${rec}`).join('\n')}
-`,
-  )
-  .join('\n')}
-
-${'='.repeat(80)}
-
-PRÓXIMOS PASOS
-${'='.repeat(80)}
-
-1. Revisar recomendaciones por categoría
-2. Priorizar implementación de controles técnicos
-3. Establecer plan de acción con cronograma
-4. Realizar seguimiento trimestral
-
-Generado por: Framework de Evaluación de Privacidad LLM
-Universidad Nacional Abierta y a Distancia - UNAD
-    `.trim()
+    // Open print dialog to save as PDF
+    window.print()
   }
 
   return (

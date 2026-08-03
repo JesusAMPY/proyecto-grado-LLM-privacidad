@@ -161,3 +161,66 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Print Styles for PDF Export */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Hide navigation and buttons during print */
+  header,
+  nav,
+  .flex.gap-3.flex-wrap,
+  button {
+    display: none;
+  }
+
+  /* Optimize content for printing */
+  main,
+  .w-full.max-w-4xl.mx-auto {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Keep colors and styling for report sections */
+  .bg-gradient-to-br,
+  .border-2,
+  .border,
+  .rounded-lg {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Add page breaks between major sections */
+  h2 {
+    page-break-after: avoid;
+  }
+
+  div[class*="space-y"] > div {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure text readability */
+  .text-primary,
+  .text-primary-foreground {
+    color: #e74c3c;
+  }
+
+  .dark .text-primary,
+  .dark .text-primary-foreground {
+    color: #ff6b6b;
+  }
+
+  /* Add title for PDF */
+  body::before {
+    content: 'Informe de Evaluación de Privacidad - LLM en Instituciones de Educación Superior';
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    page-break-after: avoid;
+  }
+}
